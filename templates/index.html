@@ -1,0 +1,36 @@
+<!-- <h1>Welcome to {{ site_name }}</h1>
+<h2>AdminUsers are:</h2>
+<ul>
+    {% for admin in admins %}
+        <li>{{ admin.name }}</li>
+    {% endfor %}
+</ul> -->
+
+
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    {{user.username}}
+{% endblock %}
+
+{% block loader %}
+    {{ super() }}
+    <script src="static/vendor/ractive.runtime.min.js"></script>
+    <script src="static/vendor/superagent.js"></script>
+    <script src="static/bundle.js"></script>
+    <script>
+		var app = new Index({
+			el: 'body',
+            data: {
+                user: {
+                    name: "{{user.name}}",
+                    group: "{{user.group}}"
+                }
+            }
+		});
+	</script>
+{% endblock %}
