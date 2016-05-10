@@ -1,3 +1,4 @@
 secret_key
 passwords
 .tags*
+node_modules

@@ -1,0 +1,26 @@
+{
+  "name": "rvagamejams.com",
+  "version": "1.0.0",
+  "description": "Website for RVAGameJams",
+  "main": "main.py",
+  "dependencies": {
+    "ractive": "^0.7.3",
+    "superagent": "^1.8.3"
+  },
+  "devDependencies": {
+    "rollup-plugin-ractive": "^1.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RVAGameJams/rvagamejams.com.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RVAGameJams/rvagamejams.com/issues"
+  },
+  "homepage": "https://github.com/RVAGameJams/rvagamejams.com#readme"
+}
