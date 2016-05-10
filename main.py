@@ -33,7 +33,6 @@ def do_login( username, password ):
     salt = app.secret_key #"ludumdare_secret_jammer"
 
     pass_hash = sha512( ( password + salt ).encode('utf-8') ).hexdigest()
-    print( pass_hash )
 
     user_document = mongo.db.Users.find_one({"name": username})
     if user_document and user_document['password'] == pass_hash:
@@ -51,37 +50,37 @@ def do_logout():
 
 
 # check for authentication on pages that use it. Redirect to login on fail
-# def authenticate(group="user"): # outer wrapper to receive group argument
-#     def authenticator_wrapper(f): # inner wrapper to fix namespacing
-#
-#         @wraps(f)
-#         def decorated_authenticator(*args, **kwargs): # where the magic happens
-#             redirect_object = redirect( url_for("login", next=request.url) )
-#
-#             # redirect if no session exists
-#             if not 'session_id' in session or not 'name' in session:
-#                 return redirect_object
-#
-#             # see if the session id is in the DB and user has permissions
-#             session_document = mongo.db.Sessions.find_one({"_id": ObjectId( session['session_id'] ) })
-#             if session_document and session_document['username'] == session['name']:
-#                 if group == "admin": # make sure admin pages have admin priveledges
-#                     global user
-#                     user_document = mongo.db.Users.find_one({ "name": session['name'] })
-#                     user = user_document["name"]
-#
-#                     if user_document['group'] == "admin":
-#                         return f(*args, **kwargs)
-#                     else:
-#                         redirect_object
-#                 else: # base user pages get a pass
-#                     return f(*args, **kwargs)
-#
-#             else:
-#                 return redirect_object
-#
-#         return decorated_authenticator
-#     return authenticator_wrapper
+def authenticate(group="user"): # outer wrapper to receive group argument
+    def authenticator_wrapper(f): # inner wrapper to fix namespacing
+
+        @wraps(f)
+        def decorated_authenticator(*args, **kwargs): # where the magic happens
+            redirect_object = redirect( url_for("login", next=request.url) )
+
+            # redirect if no session exists
+            if not 'session_id' in session or not 'name' in session:
+                return redirect_object
+
+            # see if the session id is in the DB and user has permissions
+            session_document = mongo.db.Sessions.find_one({"_id": ObjectId( session['session_id'] ) })
+            if session_document and session_document['username'] == session['name']:
+                if group == "admin": # make sure admin pages have admin priveledges
+                    global user
+                    user_document = mongo.db.Users.find_one({ "name": session['name'] })
+                    user = user_document["name"]
+
+                    if user_document['group'] == "admin":
+                        return f(*args, **kwargs)
+                    else:
+                        redirect_object
+                else: # base user pages get a pass
+                    return f(*args, **kwargs)
+
+            else:
+                return redirect_object
+
+        return decorated_authenticator
+    return authenticator_wrapper
 
 def get_user(*args, **kwargs): # where the magic happens
     # see if the session id is in the DB and user has permissions
@@ -100,8 +99,13 @@ def get_user(*args, **kwargs): # where the magic happens
 
 @app.route("/")
 def index():
-    admins = mongo.db.AdminUsers.find()
-    return render_template("index.html", site_name="RVAGameJams", admins=admins, user=get_user())
+    return render_template( "index.html", user=get_user() )
+
+@app.route("/admin", defaults={ 'panel': None } )
+@app.route("/admin/<panel>")
+@authenticate(group="admin")
+def admin(panel):
+    return render_template( "admin.html", user=get_user(), panel=panel )
 
 
 @app.route("/login", methods=['POST', 'DELETE'])

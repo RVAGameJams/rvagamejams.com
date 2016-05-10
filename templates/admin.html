@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+{% endblock %}
+
+{% block loader %}
+    {{ super() }}
+    <script src="static/apps/admin.js"></script>
+    <script>
+		var RGJ_app = new RactiveApp({
+			el: 'body',
+            data: {
+                user: {
+                    name: "{{user.name}}",
+                    group: "{{user.group}}"
+                }
+            }
+		});
+	</script>
+{% endblock %}
