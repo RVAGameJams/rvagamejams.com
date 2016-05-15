@@ -31,17 +31,30 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 # connect to the database
 mongo = PyMongo(app)
 
+
+
+
+
+
+
+
 #-- HANDLERS: apps
 
 @app.route("/")
 def index():
     return render_template( "index.html", user=helpers.get_user(mongo) )
 
+
+
+
 @app.route("/admin", defaults={ 'panel': None } )
 @app.route("/admin/<panel>")
 @authentication.authenticate(mongo, group="admin")
 def admin(panel):
     return render_template( "admin.html", user=helpers.get_user(mongo), panel=panel )
+
+
+
 
 
 
@@ -59,6 +72,9 @@ def login():
     if request.method == "DELETE":
         authentication.logout()
         return make_response("", 200)
+
+
+
 
 @app.route("/admin/events", methods=['POST', 'PUT', 'DELETE'])
 @authentication.authenticate(mongo, group="admin")
@@ -84,16 +100,25 @@ def admin_events():
     elif request.method == 'DELETE':
         pass
 
+
+
+
 @app.route("/events", methods=['GET'])
 def events():
     events = mongo.db.Events.find()
     return make_response( dumps(events), 200 )
+
+
+
 
 @app.route("/images/<table_name>/<_id>/<field>", methods=['GET'])
 def images(table_name, _id, field):
     _file = getattr(mongo.db, table_name.capitalize()).find_one({ '_id': ObjectId(_id) })[field]
 
     return make_response( _file['data'], 200, { "Content-Type": _file['type'] } )
+
+
+
 
 
 #-- START APPLICATION
