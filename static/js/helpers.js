@@ -4,7 +4,7 @@ RGJ.helpers = {
     encode_file: function( file_object, callback ) {
         var reader = new FileReader();
         reader.onload = function() {
-            callback(reader.result);
+            callback( btoa( reader.result ) );
         };
 
         reader.readAsBinaryString( file_object );
@@ -16,6 +16,6 @@ RGJ.helpers = {
             callback(reader.result);
         };
 
-        reader.readAsDataURL( file_object )
+        reader.readAsDataURL( file_object );
     }
 }

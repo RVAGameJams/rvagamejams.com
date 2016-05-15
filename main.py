@@ -11,6 +11,7 @@ from bson import binary
 from hashlib import sha512
 from datetime import datetime
 from base64 import b64decode
+import traceback
 import json
 import io
 
@@ -154,11 +155,10 @@ def admin_events():
                 'name': str( event_document.inserted_id ) + "-cover.png",
                 'image': binary.Binary( bytes( b64decode( request.json['cover_image'] ) ) )
             })
-            # with open( 'images/events/' + str( event_document.inserted_id ) + "-cover.png", "wb" ) as f:
-            #     f.write( bytes( b64decode( request.json['cover_image'] ) ) )
 
             return make_response('', 200)
         except Exception as error:
+            traceback.print_tb( error.__traceback__)
             return make_response( str(error), 400)
     elif request.method == 'PUT':
         pass

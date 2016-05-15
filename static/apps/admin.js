@@ -30,7 +30,7 @@ var RactiveApp = (function (Ractive) {
                         that.set('cover_image', result);
                     } );
                     RGJ.helpers.encode_file( changes.cover_image_file[0], function(result) {
-                        that.set('cover_image', result);
+                        that.set('cover_image_binary', result);
                     } );
                 }
             },
