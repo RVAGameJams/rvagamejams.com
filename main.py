@@ -149,10 +149,7 @@ def admin_events():
                 'end': datetime.fromtimestamp( int( request.json['end'] ) / 1000 ),
                 'headline': request.json['headline'],
                 'description': request.json['description'],
-                'cover-image': {
-                    'type': request.json['cover_image']['type'],
-                    'data': image_to_mongo( request.json['cover_image']['data'] )
-                }
+                'cover-image': image_to_mongo( request.json['cover_image'] )
             })
 
             return make_response('', 200)
@@ -171,13 +168,14 @@ def events():
 @app.route("/images/<table_name>/<_id>/<field>", methods=['GET'])
 def images(table_name, _id, field):
     _file = getattr(mongo.db, table_name.capitalize()).find_one({ '_id': ObjectId(_id) })[field]
-    print(_file['type'])
+
     return make_response( _file['data'], 200, { "Content-Type": _file['type'] } )
 
 
 # -- Helpers
-def image_to_mongo( image ):
-    return binary.Binary( bytes( b64decode( image ) ) )
+def image_to_mongo( file_info ):
+    file_info['data'] = binary.Binary( bytes( b64decode( file_info['data'] ) ) )
+    return file_info
 
 #-- START APPLICATION
 
