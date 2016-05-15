@@ -12,9 +12,10 @@ var RactiveApp = (function (Ractive) {
                 end: '',
                 headline: '',
                 description: '',
+                cover_image_binary: null,
+
                 cover_image: null,
                 cover_image_file: null,
-                cover_image_binary: null,
                 description_tab: 'markdown'
             },
 
@@ -25,17 +26,12 @@ var RactiveApp = (function (Ractive) {
                 if ( 'cover_image_file' in changes ) {
                     var that = this;
 
-                    var reader = new FileReader();
-                    reader.onload = function() {
-                        that.set('cover_image', reader.result);
-                    };
-                    reader.readAsDataURL( changes.cover_image_file[0] )
-
-                    reader.onload = function() {
-                        that.set( 'cover_image_binary', btoa( reader.result) );
-                    };
-                    reader.readAsBinaryString( changes.cover_image_file[0] )
-
+                    RGJ.helpers.render_image( changes.cover_image_file[0], function(result) {
+                        that.set('cover_image', result);
+                    } );
+                    RGJ.helpers.encode_file( changes.cover_image_file[0], function(result) {
+                        that.set('cover_image', result);
+                    } );
                 }
             },
 
