@@ -29,8 +29,11 @@ var RactiveApp = (function (Ractive) {
                     RGJ.helpers.render_image( changes.cover_image_file[0], function(result) {
                         that.set('cover_image', result);
                     } );
-                    RGJ.helpers.encode_file( changes.cover_image_file[0], function(result) {
-                        that.set('cover_image_binary', result);
+                    RGJ.helpers.encode_file( changes.cover_image_file[0], function(result) {                    
+                        that.set('cover_image_binary', {
+                            type: that.get('cover_image_file')[0].type,
+                            data: result
+                        });
                     } );
                 }
             },

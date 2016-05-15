@@ -1,7 +1,7 @@
 <div class="container">
     {{#events:i}}
         {{#if current_event == i}}
-            <div class="event" style="{{show_description ? 'margin-top: -75.5px' : ''}} background-image: url(images/{{_id.$oid}}-cover.png)">
+            <div class="event" style="{{show_description ? 'margin-top: -75.5px' : ''}} background-image: url(images/Events/{{_id.$oid}}/cover-image)">
                 <div class="headline">
                     <h4>
                         {{#if start > get_date()}}

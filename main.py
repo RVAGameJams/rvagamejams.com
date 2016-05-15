@@ -148,17 +148,15 @@ def admin_events():
                 'start': datetime.fromtimestamp( int( request.json['start'] ) / 1000 ),
                 'end': datetime.fromtimestamp( int( request.json['end'] ) / 1000 ),
                 'headline': request.json['headline'],
-                'description': request.json['description']
-            })
-
-            mongo.db.Images.insert_one({
-                'name': str( event_document.inserted_id ) + "-cover.png",
-                'image': binary.Binary( bytes( b64decode( request.json['cover_image'] ) ) )
+                'description': request.json['description'],
+                'cover-image': {
+                    'type': request.json['cover_image']['type'],
+                    'data': image_to_mongo( request.json['cover_image']['data'] )
+                }
             })
 
             return make_response('', 200)
         except Exception as error:
-            traceback.print_tb( error.__traceback__)
             return make_response( str(error), 400)
     elif request.method == 'PUT':
         pass
@@ -170,10 +168,16 @@ def events():
     events = mongo.db.Events.find()
     return make_response( dumps(events), 200 )
 
-@app.route("/images/<image_name>", methods=['GET'])
-def images(image_name):
-    blob = mongo.db.Images.find_one({ 'name': image_name })['image']
-    return make_response( blob, 200, {'Content-Type': "image/png"})
+@app.route("/images/<table_name>/<_id>/<field>", methods=['GET'])
+def images(table_name, _id, field):
+    _file = getattr(mongo.db, table_name.capitalize()).find_one({ '_id': ObjectId(_id) })[field]
+    print(_file['type'])
+    return make_response( _file['data'], 200, { "Content-Type": _file['type'] } )
+
+
+# -- Helpers
+def image_to_mongo( image ):
+    return binary.Binary( bytes( b64decode( image ) ) )
 
 #-- START APPLICATION
 
