@@ -1,0 +1,115 @@
+<form class="sub-panel pure-form pure-form-stacked">
+    <input placeholder="Event Name" value="{{name}}">
+    <span>Cover Image </span><input type="file" id="cover-image" value="{{cover_image_file}}">
+    <img src="{{cover_image}}">
+    <input placeholder="Start Time" value="{{start}}">
+    <input placeholder="End Time" value="{{end}}">
+    <textarea class="headline" placeholder="Headline" value="{{headline}}"></textarea>
+    <div>
+        <div class="tab {{ description_tab == 'markdown' ? 'active' : '' }}" on-click="set('description_tab', 'markdown')">Markdown</div>
+        <div class="tab {{ description_tab == 'rendered' ? 'active' : '' }}" on-click="set('description_tab', 'rendered')">Rendered</div>
+
+        {{#if description_tab == 'markdown'}}
+            <textarea class="description" placeholder="Description" value={{description}}></textarea>
+        {{else}}
+            <div class="description-rendered">
+                {{{description_rendered}}}
+            </div>
+        {{/if}}
+    </div>
+</form>
+<button class="pure-button" on-click="submit()">Add Event</button>
+
+
+
+
+<style>
+    input {
+        width: 250px;
+    }
+    textarea {
+        width: 500px;
+        resize: none;
+    }
+    .headline {
+        height: 4em;
+    }
+    .description {
+        height: 12em;
+        margin-top: 0px;
+    }
+    .tab {
+        display: inline-block;
+        width: 100px;
+        padding: 5px;
+        margin-top: 10px;
+        text-align: center;
+        font-variant: small-caps;
+        user-select: none;
+        cursor: pointer;
+    }
+    .tab.active {
+        border-bottom: 2px solid black;
+    }
+    .description-rendered {
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+    }
+</style>
+
+
+
+<script>
+    component.exports = {
+        data: {
+            name: '',
+            start: '',
+            end: '',
+            headline: '',
+            description: '',
+            cover_image: null,
+            cover_image_file: null,
+            cover_image_binary: null,
+            description_tab: 'markdown'
+        },
+
+        onchange: function(changes) {
+            if ( 'description' in changes ) {
+                this.set( 'description_rendered', markdown.toHTML( changes['description'] ) )
+            }
+            if ( 'cover_image_file' in changes ) {
+                var that = this;
+
+                var reader = new FileReader();
+                reader.onload = function() {
+                    that.set('cover_image', reader.result);
+                };
+                reader.readAsDataURL( changes.cover_image_file[0] )
+
+                reader.onload = function() {
+                    that.set( 'cover_image_binary', btoa( reader.result) );
+                };
+                reader.readAsBinaryString( changes.cover_image_file[0] )
+
+            }
+        },
+
+        submit: function() {
+            var data = {
+                name: this.get('name'),
+                cover_image: this.get('cover_image_binary'),
+                start: Date.parse( this.get('start') ),
+                end: Date.parse( this.get('end') ),
+                headline: this.get('headline'),
+                description: this.get('description')
+            }
+
+            superagent.post('/admin/events')
+            .send(data)
+            .end( function( error, response ) {
+
+            });
+        }
+    }
+</script>

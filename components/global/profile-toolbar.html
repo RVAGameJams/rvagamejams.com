@@ -10,6 +10,9 @@
             {{/if}}
             {{#if is_logged_in}}
                 {{#if user.group == "admin"}}
+                    <div class="menu-item">
+                        <a href="/admin">Admin</a>
+                    </div>
                 {{/if}}
                 <button class="pure-button" on-click="log_out()">Log-out</button>
             {{else}}
@@ -46,6 +49,13 @@
     a {
         cursor: pointer;
         user-select: none;
+    }
+    .menu-item {
+        padding: 5px;
+    }
+    .menu-item a {
+        color: blue;
+        text-decoration: none;
     }
 </style>
 

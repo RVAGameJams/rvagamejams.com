@@ -7,9 +7,12 @@ from flask.sessions import session_json_serializer
 from flask.ext.pymongo import PyMongo
 from bson.json_util import dumps
 from bson.objectid import ObjectId
+from bson import binary
 from hashlib import sha512
 from datetime import datetime
+from base64 import b64decode
 import json
+import io
 
 app = Flask(__name__)
 
@@ -22,6 +25,11 @@ else:
 
 with open('secret_key') as key_file:
     app.secret_key = key_file.read()
+
+
+# enable image uploads
+UPLOAD_FOLDER = '/images'
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 # connect to the database
 mongo = PyMongo(app)
@@ -95,7 +103,10 @@ def get_user(*args, **kwargs): # where the magic happens
 
     return None
 
-#-- HANDLERS
+
+
+
+#-- HANDLERS: apps
 
 @app.route("/")
 def index():
@@ -107,6 +118,10 @@ def index():
 def admin(panel):
     return render_template( "admin.html", user=get_user(), panel=panel )
 
+
+
+
+#-- HANDLERS: ajax
 
 @app.route("/login", methods=['POST', 'DELETE'])
 def login():
@@ -120,7 +135,45 @@ def login():
         do_logout()
         return make_response("", 200)
 
+@app.route("/admin/events", methods=['POST', 'PUT', 'DELETE'])
+@authenticate(group="admin")
+def admin_events():
+    if request.method == 'POST':
+        errors = []
 
+        try:
+            event_document = mongo.db.Events.insert_one({
+                'name': request.json['name'],
+                'start': datetime.fromtimestamp( int( request.json['start'] ) / 1000 ),
+                'end': datetime.fromtimestamp( int( request.json['end'] ) / 1000 ),
+                'headline': request.json['headline'],
+                'description': request.json['description']
+            })
+
+            mongo.db.Images.insert_one({
+                'name': str( event_document.inserted_id ) + "-cover.png",
+                'image': binary.Binary( bytes( b64decode( request.json['cover_image'] ) ) )
+            })
+            # with open( 'images/events/' + str( event_document.inserted_id ) + "-cover.png", "wb" ) as f:
+            #     f.write( bytes( b64decode( request.json['cover_image'] ) ) )
+
+            return make_response('', 200)
+        except Exception as error:
+            return make_response( str(error), 400)
+    elif request.method == 'PUT':
+        pass
+    elif request.method == 'DELETE':
+        pass
+
+@app.route("/events", methods=['GET'])
+def events():
+    events = mongo.db.Events.find()
+    return make_response( dumps(events), 200 )
+
+@app.route("/images/<image_name>", methods=['GET'])
+def images(image_name):
+    blob = mongo.db.Images.find_one({ 'name': image_name })['image']
+    return make_response( blob, 200, {'Content-Type': "image/png"})
 
 #-- START APPLICATION
 
