@@ -12,10 +12,10 @@ var RactiveApp = (function (Ractive) {
                 end: '',
                 headline: '',
                 description: '',
-                cover_image_binary: null,
-
                 cover_image: null,
-                cover_image_file: null,
+
+                cover_image_rendered: null,
+                cover_image_encoded: null,
                 description_tab: 'markdown'
             },
 
@@ -23,14 +23,14 @@ var RactiveApp = (function (Ractive) {
                 if ( 'description' in changes ) {
                     this.set( 'description_rendered', markdown.toHTML( changes['description'] ) )
                 }
-                if ( 'cover_image_file' in changes ) {
+                if ( 'cover_image' in changes ) {
                     var that = this;
 
-                    RGJ.helpers.render_image( changes.cover_image_file[0], function(result) {
-                        that.set('cover_image', result);
+                    RGJ.helpers.render_image( changes.cover_image[0], function(result) {
+                        that.set('cover_image_rendered', result);
                     } );
-                    RGJ.helpers.encode_file( changes.cover_image_file[0], function(result) {
-                        that.set('cover_image_binary', result);
+                    RGJ.helpers.encode_file( changes.cover_image[0], function(result) {
+                        that.set('cover_image_encoded', result);
                     } );
                 }
             },
@@ -38,7 +38,7 @@ var RactiveApp = (function (Ractive) {
             submit: function() {
                 var data = {
                     name: this.get('name'),
-                    cover_image: this.get('cover_image_binary'),
+                    cover_image: this.get('cover_image_encoded'),
                     start: Date.parse( this.get('start') ),
                     end: Date.parse( this.get('end') ),
                     headline: this.get('headline'),
@@ -53,7 +53,7 @@ var RactiveApp = (function (Ractive) {
             }
         }
 
-    component$1.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},f:[{p:[2,5,57],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"name",p:[2,44,96]}]}}," ",{p:[3,5,111],t:7,e:"span",f:["Cover Image"]},{p:[3,30,136],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"cover_image_file",p:[3,73,179]}]}}," ",{p:[4,5,206],t:7,e:"img",a:{src:[{t:2,r:"cover_image",p:[4,15,216]}]}}," ",{p:[5,5,238],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"start",p:[5,44,277]}]}}," ",{p:[6,5,293],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"end",p:[6,42,330]}]}}," ",{p:[7,5,344],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"headline",p:[7,62,401]}]}}," ",{p:[8,5,431],t:7,e:"div",f:[{p:[9,9,445],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[9,25,461]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[10,9,583],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[10,25,599]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[13,13,772],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"description",p:[13,75,834]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[12,9,722]},{t:4,n:51,f:[{p:[15,13,891],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[16,17,942]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}," ",{p:[21,1,1023],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},f:["Add Event"]}]};
+    component$1.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},f:[{p:[2,5,57],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"name",p:[2,44,96]}]}}," ",{p:[3,5,111],t:7,e:"span",f:["Cover Image"]},{p:[3,30,136],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"cover_image",p:[3,73,179]}]}}," ",{p:[4,5,201],t:7,e:"img",a:{src:[{t:2,r:"cover_image_rendered",p:[4,15,211]}]}}," ",{p:[5,5,242],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"start",p:[5,44,281]}]}}," ",{p:[6,5,297],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"end",p:[6,42,334]}]}}," ",{p:[7,5,348],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"headline",p:[7,62,405]}]}}," ",{p:[8,5,435],t:7,e:"div",f:[{p:[9,9,449],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[9,25,465]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[10,9,587],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[10,25,603]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[13,13,776],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"description",p:[13,75,838]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[12,9,726]},{t:4,n:51,f:[{p:[15,13,895],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[16,17,946]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}," ",{p:[21,1,1027],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},f:["Add Event"]}]};
     component$1.exports.css = "input{width:250px}textarea{width:500px;resize:none}.headline{height:4em}.description{height:12em;margin-top:0}.tab{display:inline-block;width:100px;padding:5px;margin-top:10px;text-align:center;font-variant:small-caps;user-select:none;cursor:pointer}.tab.active{border-bottom:2px solid #000}.description-rendered{background-color:#fff;width:100%;padding:10px}";
     var __import0__ = Ractive.extend( component$1.exports );
 

@@ -1,7 +1,7 @@
 <form class="sub-panel pure-form pure-form-stacked">
     <input placeholder="Event Name" value="{{name}}">
-    <span>Cover Image </span><input type="file" id="cover-image" value="{{cover_image_file}}">
-    <img src="{{cover_image}}">
+    <span>Cover Image </span><input type="file" id="cover-image" value="{{cover_image}}">
+    <img src="{{cover_image_rendered}}">
     <input placeholder="Start Time" value="{{start}}">
     <input placeholder="End Time" value="{{end}}">
     <textarea class="headline" placeholder="Headline" value="{{headline}}"></textarea>
@@ -68,10 +68,10 @@
             end: '',
             headline: '',
             description: '',
-            cover_image_binary: null,
-
             cover_image: null,
-            cover_image_file: null,
+
+            cover_image_rendered: null,
+            cover_image_encoded: null,
             description_tab: 'markdown'
         },
 
@@ -79,14 +79,14 @@
             if ( 'description' in changes ) {
                 this.set( 'description_rendered', markdown.toHTML( changes['description'] ) )
             }
-            if ( 'cover_image_file' in changes ) {
+            if ( 'cover_image' in changes ) {
                 var that = this;
 
-                RGJ.helpers.render_image( changes.cover_image_file[0], function(result) {
-                    that.set('cover_image', result);
+                RGJ.helpers.render_image( changes.cover_image[0], function(result) {
+                    that.set('cover_image_rendered', result);
                 } );
-                RGJ.helpers.encode_file( changes.cover_image_file[0], function(result) {
-                    that.set('cover_image_binary', result);
+                RGJ.helpers.encode_file( changes.cover_image[0], function(result) {
+                    that.set('cover_image_encoded', result);
                 } );
             }
         },
@@ -94,7 +94,7 @@
         submit: function() {
             var data = {
                 name: this.get('name'),
-                cover_image: this.get('cover_image_binary'),
+                cover_image: this.get('cover_image_encoded'),
                 start: Date.parse( this.get('start') ),
                 end: Date.parse( this.get('end') ),
                 headline: this.get('headline'),
