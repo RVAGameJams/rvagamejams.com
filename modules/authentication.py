@@ -1,11 +1,12 @@
 from functools import wraps
 from hashlib import sha512
-from flask import session
+from flask import session, make_response
 from bson.objectid import ObjectId
+from datetime import datetime
 
 # handle the login procedure
-def login( username, password ):
-    salt = app.secret_key #"ludumdare_secret_jammer"
+def login( username, password, app, mongo ):
+    salt = app.secret_key
 
     pass_hash = sha512( ( password + salt ).encode('utf-8') ).hexdigest()
 
@@ -32,6 +33,7 @@ def authenticate(mongo, group="user"): # outer wrapper to receive group argument
         def decorated_authenticator(*args, **kwargs): # where the magic happens
             # return error if no session exists
             if not 'session_id' in session or not 'name' in session:
+                # TODO add error page
                 return make_response("", 403)
 
             # see if the session id is in the DB and user has permissions

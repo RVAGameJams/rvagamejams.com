@@ -65,7 +65,7 @@ def admin(panel):
 def login():
     next_page = request.args['next'] if 'next' in request.args else "/"
     if request.method == "POST":
-        if authentication.login( request.json["name"], request.json["password"] ):
+        if authentication.login( request.json["name"], request.json["password"], app, mongo ):
             return make_response( json.dumps( helpers.get_user(mongo) ), 200)
         else:
             return make_response("", 403)
