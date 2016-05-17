@@ -82,6 +82,63 @@ var RactiveApp = (function (Ractive) {
 
         component$2.exports = {
             data: {
+                notification: null,
+
+                is_active: false,
+                show: false
+            },
+            _queue: [],
+            push: function(message) {
+                this._queue.push(message);
+
+                 if ( !this.get('is_active') ) {
+                     this.next()
+                 }
+            },
+            transitions: {
+                notify: function(t) {
+                    var notifier = RGJ.app.findComponent('notifier')
+                    if ( t.isIntro ) {
+                        t.setStyle('transform', 'translateY(-100%)');
+                        t.animateStyle('transform',  'translateY(0%)', {duration: 500})
+                        .then( function() {
+                            t.complete()
+                            setTimeout( function() {
+                                notifier.set('show', false);
+                            }, 2000)
+                        });
+                    }
+                    else {
+                        t.animateStyle('transform',  'translateY(-100%)', {duration: 250})
+                        .then( function() {
+                            t.complete()
+                            notifier.next()
+                        });
+                    }
+                }
+            },
+            next: function() {
+                if ( this._queue.length > 0 ) {
+                    this.set( 'notification', this._queue.shift() );
+                    this.set('show', true)
+                    this.set('is_active', true)
+                }
+                else {
+                    this.set('notification', null)
+                    this.set('is_active', false)
+
+                }
+            }
+        }
+
+    component$2.exports.template = {v:3,t:[{t:4,f:[{p:[2,5,17],t:7,e:"div",a:{id:"container-notifier"},f:[{p:[3,9,55],t:7,e:"div",a:{id:"notifier"},t1:"notify",t2:"notify",f:[{t:3,r:"notification",p:[4,13,117]}]}]}],n:50,r:"show",p:[1,1,0]}]};
+    component$2.exports.css = "#container-notifier{position:fixed;width:100vw;text-align:center}#notifier{display:inline-block;background-color:#ccc;padding:10px 15px;box-shadow:0 0 2px #000;border-radius:0 0 8px 8px;font-size:16px}";
+    var __import1__ = Ractive.extend( component$2.exports );
+
+    var component$3 = { exports: {} };
+
+        component$3.exports = {
+            data: {
                 is_open: false,
                 show_error: false,
                 is_logged_in: false,
@@ -127,14 +184,14 @@ var RactiveApp = (function (Ractive) {
             }
         }
 
-    component$2.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"div",a:{id:"profile-toolbar"},f:[{p:[2,5,31],t:7,e:"div",a:{id:"toggle"},f:[{p:[3,9,57],t:7,e:"a",v:{click:{m:"toggle",a:{r:[],s:"[\"is_open\"]"}}},f:[{t:2,x:{r:["user.name"],s:"_0!=\"\"?_0:\"Log-In\""},p:[3,41,89]}]}]}," ",{t:4,f:[{p:[7,9,178],t:7,e:"div",a:{id:"panel"},f:[{t:4,f:[{p:[9,17,242],t:7,e:"strong",f:["Username or password is incorrect"]}],n:50,r:"show_error",p:[8,13,207]}," ",{t:4,f:[{t:4,f:[{p:[13,21,412],t:7,e:"div",a:{"class":"menu-item"},f:[{p:[14,25,460],t:7,e:"a",a:{href:"/admin"},f:["Admin"]}]}],n:50,x:{r:["user.group"],s:"_0==\"admin\""},p:[12,17,362]}," ",{p:[17,17,554],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_out",a:{r:[],s:"[]"}}},f:["Log-out"]}],n:50,r:"is_logged_in",p:[11,13,325]},{t:4,n:51,f:[{p:[19,17,657],t:7,e:"form",a:{"class":"pure-form pure-form-stacked"},f:[{p:[20,21,720],t:7,e:"input",a:{placeholder:"Jammer Name",value:[{t:2,r:"new_username",p:[20,61,760]}]}}," ",{p:[21,21,799],t:7,e:"input",a:{type:"password",placeholder:"Password",value:[{t:2,r:"new_password",p:[21,74,852]}]}}]}," ",{p:[23,17,911],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_in",a:{r:[],s:"[]"}}},f:["Log-in"]}],r:"is_logged_in"}]}],n:50,r:"is_open",p:[6,5,154]}]}]};
-    component$2.exports.css = "#panel,#toggle{background-color:#bbb;padding:10px}#profile-toolbar{position:absolute;right:0;top:0;display:flex;flex-direction:column}#toggle{display:inline-block;margin-left:auto}a{cursor:pointer;user-select:none}.menu-item{padding:5px}.menu-item a{color:#00f;text-decoration:none}";
-    var __import1__ = Ractive.extend( component$2.exports );
+    component$3.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"div",a:{id:"profile-toolbar"},f:[{p:[2,5,31],t:7,e:"div",a:{id:"toggle"},f:[{p:[3,9,57],t:7,e:"a",v:{click:{m:"toggle",a:{r:[],s:"[\"is_open\"]"}}},f:[{t:2,x:{r:["user.name"],s:"_0!=\"\"?_0:\"Log-In\""},p:[3,41,89]}]}]}," ",{t:4,f:[{p:[7,9,178],t:7,e:"div",a:{id:"panel"},f:[{t:4,f:[{p:[9,17,242],t:7,e:"strong",f:["Username or password is incorrect"]}],n:50,r:"show_error",p:[8,13,207]}," ",{t:4,f:[{t:4,f:[{p:[13,21,412],t:7,e:"div",a:{"class":"menu-item"},f:[{p:[14,25,460],t:7,e:"a",a:{href:"/admin"},f:["Admin"]}]}],n:50,x:{r:["user.group"],s:"_0==\"admin\""},p:[12,17,362]}," ",{p:[17,17,554],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_out",a:{r:[],s:"[]"}}},f:["Log-out"]}],n:50,r:"is_logged_in",p:[11,13,325]},{t:4,n:51,f:[{p:[19,17,657],t:7,e:"form",a:{"class":"pure-form pure-form-stacked"},f:[{p:[20,21,720],t:7,e:"input",a:{placeholder:"Jammer Name",value:[{t:2,r:"new_username",p:[20,61,760]}]}}," ",{p:[21,21,799],t:7,e:"input",a:{type:"password",placeholder:"Password",value:[{t:2,r:"new_password",p:[21,74,852]}]}}]}," ",{p:[23,17,911],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_in",a:{r:[],s:"[]"}}},f:["Log-in"]}],r:"is_logged_in"}]}],n:50,r:"is_open",p:[6,5,154]}]}]};
+    component$3.exports.css = "#panel,#toggle{background-color:#bbb;padding:10px}#profile-toolbar{position:absolute;right:0;top:0;display:flex;flex-direction:column}#toggle{display:inline-block;margin-left:auto}a{cursor:pointer;user-select:none}.menu-item{padding:5px}.menu-item a{color:#00f;text-decoration:none}";
+    var __import2__ = Ractive.extend( component$3.exports );
 
     var component = { exports: {} };
 
-    component.exports.template = {v:3,t:[{p:[4,1,110],t:7,e:"profile-toolbar"}," ",{p:[6,1,131],t:7,e:"div",f:[{p:[7,5,141],t:7,e:"h1",f:["RVAGameJams"]}]}," ",{p:[10,1,170],t:7,e:"carousel"}]};
-    component.exports.components = { carousel: __import0__, "profile-toolbar": __import1__ };
+    component.exports.template = {v:3,t:[{p:[5,1,161],t:7,e:"profile-toolbar"}," ",{p:[6,1,181],t:7,e:"notifier"}," ",{p:[8,1,195],t:7,e:"div",f:[{p:[9,5,205],t:7,e:"h1",f:["RVAGameJams"]}]}," ",{p:[12,1,234],t:7,e:"carousel"}]};
+    component.exports.components = { carousel: __import0__, notifier: __import1__, "profile-toolbar": __import2__ };
     var index = Ractive.extend( component.exports );
 
     return index;

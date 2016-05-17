@@ -16,6 +16,7 @@
         data: {
             is_submitting: false,
             is_submit_error: false,
+            is_success: false,
 
             get_error: function ( field_name ) {
                 if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
@@ -25,6 +26,18 @@
                     return false;
                 }
             }
+        },
+        oninit: function() {
+            // validate whenever form changes
+            this.parent.on('change', function(changes) {
+                for ( var change in changes ) {
+                    if ( change.startsWith('form.') ) {
+                        if ( 'validate' in this ) {
+                            this.validate()
+                        }
+                    }
+                }
+            });
         },
         validate: function() {
             if ( 'validate' in this.parent ) {

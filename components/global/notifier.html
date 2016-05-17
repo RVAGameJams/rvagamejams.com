@@ -1,0 +1,76 @@
+{{#if show}}
+    <div id="container-notifier">
+        <div id="notifier" intro="notify" outro="notify">
+            {{{notification}}}
+        </div>
+    </div>
+{{/if}}
+
+<style>
+    #container-notifier {
+        position: fixed;
+        width: 100vw;
+        text-align: center;
+    }
+    #notifier {
+        display: inline-block;
+        background-color: #ccc;
+        padding: 10px 15px;
+        box-shadow: 0px 0px 2px black;
+        border-radius: 0px 0px 8px 8px;
+        font-size: 16px;
+    }
+</style>
+
+<script>
+    component.exports = {
+        data: {
+            notification: null,
+
+            is_active: false,
+            show: false
+        },
+        _queue: [],
+        push: function(message) {
+            this._queue.push(message);
+
+             if ( !this.get('is_active') ) {
+                 this.next()
+             }
+        },
+        transitions: {
+            notify: function(t) {
+                var notifier = RGJ.app.findComponent('notifier')
+                if ( t.isIntro ) {
+                    t.setStyle('transform', 'translateY(-100%)');
+                    t.animateStyle('transform',  'translateY(0%)', {duration: 500})
+                    .then( function() {
+                        t.complete()
+                        setTimeout( function() {
+                            notifier.set('show', false);
+                        }, 2000)
+                    });
+                }
+                else {
+                    t.animateStyle('transform',  'translateY(-100%)', {duration: 250})
+                    .then( function() {
+                        t.complete()
+                        notifier.next()
+                    });
+                }
+            }
+        },
+        next: function() {
+            if ( this._queue.length > 0 ) {
+                this.set( 'notification', this._queue.shift() );
+                this.set('show', true)
+                this.set('is_active', true)
+            }
+            else {
+                this.set('notification', null)
+                this.set('is_active', false)
+
+            }
+        }
+    }
+</script>
