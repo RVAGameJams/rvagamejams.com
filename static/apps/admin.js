@@ -3,33 +3,64 @@ var RactiveApp = (function (Ractive) {
 
     Ractive = 'default' in Ractive ? Ractive['default'] : Ractive;
 
+    var component$2 = { exports: {} };
+
+        component$2.exports = {
+            data: {
+                get_error: function ( field_name ) {
+                    if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
+                        return this.get('validation_errors')[field_name];
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            },
+            validate: function() {
+                if ( 'validate' in this.parent ) {
+                    this.parent.validate()
+                }
+            },
+            submit: function() {
+                if ( 'submit' in this.parent ) {
+                    this.parent.submit()
+                }
+            }
+        }
+
+    component$2.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},v:{change:{m:"validate",a:{r:[],s:"[]"}}},f:[{t:8,r:"content",p:[2,5,80]}]}," ",{p:[4,1,102],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},m:[{t:2,x:{r:["is_valid"],s:"_0?\"\":\"disabled\""},p:[4,49,150]}],f:[{t:3,r:"buttonContents",p:[4,80,181]}]}]};
+    var __import0__$1 = Ractive.extend( component$2.exports );
+
     var component$1 = { exports: {} };
 
         component$1.exports = {
             data: {
-                name: '',
-                start: '',
-                end: '',
-                headline: '',
-                description: '',
-                cover_image: null,
+                form: {
+                    name: '',
+                    start: '',
+                    end: '',
+                    headline: '',
+                    description: '',
+                    cover_image: null
+                },
 
                 cover_image_rendered: null,
                 cover_image_encoded: null,
+                description_rendered: null,
                 description_tab: 'markdown'
             },
 
             onchange: function(changes) {
-                if ( 'description' in changes ) {
-                    this.set( 'description_rendered', markdown.toHTML( changes['description'] ) )
+                if ( 'form.description' in changes ) {
+                    this.set( 'description_rendered', markdown.toHTML( changes['form.description'] ) )
                 }
-                if ( 'cover_image' in changes ) {
+                if ( 'form.cover_image' in changes ) {
                     var that = this;
 
-                    RGJ.helpers.render_image( changes.cover_image[0], function(result) {
+                    RGJ.helpers.render_image( changes['form.cover_image'][0], function(result) {
                         that.set('cover_image_rendered', result);
                     } );
-                    RGJ.helpers.encode_file( changes.cover_image[0], function(result) {
+                    RGJ.helpers.encode_file( changes['form.cover_image'][0], function(result) {
                         that.set('cover_image_encoded', result);
                     } );
                 }
@@ -37,12 +68,12 @@ var RactiveApp = (function (Ractive) {
 
             submit: function() {
                 var data = {
-                    name: this.get('name'),
+                    name: this.get('form.name'),
                     cover_image: this.get('cover_image_encoded'),
-                    start: Date.parse( this.get('start') ),
-                    end: Date.parse( this.get('end') ),
-                    headline: this.get('headline'),
-                    description: this.get('description')
+                    start: Date.parse( this.get('form.start') ),
+                    end: Date.parse( this.get('form.end') ),
+                    headline: this.get('form.headline'),
+                    description: this.get('form.description')
                 }
 
                 superagent.post('/admin/events')
@@ -50,16 +81,39 @@ var RactiveApp = (function (Ractive) {
                 .end( function( error, response ) {
 
                 });
+            },
+
+            validate: function() {
+                var form = this.get('form');
+
+                var is_valid = true;
+                var validation_errors = {}
+                for ( var item in form ) {
+                    if ( form[item] === null || form[item] === '' ) {
+                        is_valid = false;
+                    }
+
+                    if ( ['start', 'end'].indexOf(item) != -1 ) {
+                        if ( form[item] && isNaN( Date.parse( form[item] ) ) ) {
+                            is_valid = false;
+                            validation_errors[item] = "Can't Parse Datetime";
+                        }
+                    }
+                }
+
+                this.set('is_valid', is_valid);
+                this.set('validation_errors', validation_errors);
             }
         }
 
-    component$1.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},f:[{p:[2,5,57],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"name",p:[2,44,96]}]}}," ",{p:[3,5,111],t:7,e:"span",f:["Cover Image"]},{p:[3,30,136],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"cover_image",p:[3,73,179]}]}}," ",{p:[4,5,201],t:7,e:"img",a:{src:[{t:2,r:"cover_image_rendered",p:[4,15,211]}]}}," ",{p:[5,5,242],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"start",p:[5,44,281]}]}}," ",{p:[6,5,297],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"end",p:[6,42,334]}]}}," ",{p:[7,5,348],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"headline",p:[7,62,405]}]}}," ",{p:[8,5,435],t:7,e:"div",f:[{p:[9,9,449],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[9,25,465]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[10,9,587],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[10,25,603]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[13,13,776],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"description",p:[13,75,838]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[12,9,726]},{t:4,n:51,f:[{p:[15,13,895],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[16,17,946]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}," ",{p:[21,1,1027],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},f:["Add Event"]}]};
-    component$1.exports.css = "input{width:250px}textarea{width:500px;resize:none}.headline{height:4em}.description{height:12em;margin-top:0}.tab{display:inline-block;width:100px;padding:5px;margin-top:10px;text-align:center;font-variant:small-caps;user-select:none;cursor:pointer}.tab.active{border-bottom:2px solid #000}.description-rendered{background-color:#fff;width:100%;padding:10px}";
+    component$1.exports.template = {v:3,t:[{p:[3,1,59],t:7,e:"validated-form",a:{buttonContents:"<i class='fa fa-plus'></i> Add Event"},f:[{p:[4,5,134],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"form.name",p:[4,44,173]}]}}," ",{p:[5,5,193],t:7,e:"span",f:["Cover Image"]},{p:[5,30,218],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"form.cover_image",p:[5,73,261]}]}}," ",{p:[6,5,288],t:7,e:"img",a:{src:[{t:2,r:"cover_image_rendered",p:[6,15,298]}]}}," ",{p:[7,5,329],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"form.start",p:[7,44,368]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"start\")?\"invalid\":\"\""},p:[7,95,419]}]}}," ",{p:[7,137,461],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"start\")?_0(\"start\"):\"\""},p:[7,157,481]}]}," ",{p:[8,5,542],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"form.end",p:[8,42,579]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"end\")?\"invalid\":\"\""},p:[8,91,628]}]}}," ",{p:[8,131,668],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"end\")?_0(\"end\"):\"\""},p:[8,151,688]}]}," ",{p:[9,5,745],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"form.headline",p:[9,62,802]}]}}," ",{p:[10,5,837],t:7,e:"div",f:[{p:[11,9,851],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[11,25,867]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[12,9,989],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[12,25,1005]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[15,13,1178],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"form.description",p:[15,75,1240]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[14,9,1128]},{t:4,n:51,f:[{p:[17,13,1302],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[18,17,1353]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}]};
+    component$1.exports.css = "input{width:250px}textarea{width:500px;resize:none}.headline{height:4em}.description{height:12em;margin-top:0}.tab{display:inline-block;width:100px;padding:5px;margin-top:10px;text-align:center;font-variant:small-caps;user-select:none;cursor:pointer}.tab.active{border-bottom:2px solid #000}.description-rendered{background-color:#fff;width:100%;padding:10px}.invalid{border-color:red!important}span.error{color:red}";
+    component$1.exports.components = { "validated-form": __import0__$1 };
     var __import0__ = Ractive.extend( component$1.exports );
 
-    var component$2 = { exports: {} };
+    var component$3 = { exports: {} };
 
-        component$2.exports = {
+        component$3.exports = {
             data: {
                 is_open: false,
                 show_error: false,
@@ -106,9 +160,9 @@ var RactiveApp = (function (Ractive) {
             }
         }
 
-    component$2.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"div",a:{id:"profile-toolbar"},f:[{p:[2,5,31],t:7,e:"div",a:{id:"toggle"},f:[{p:[3,9,57],t:7,e:"a",v:{click:{m:"toggle",a:{r:[],s:"[\"is_open\"]"}}},f:[{t:2,x:{r:["user.name"],s:"_0!=\"\"?_0:\"Log-In\""},p:[3,41,89]}]}]}," ",{t:4,f:[{p:[7,9,178],t:7,e:"div",a:{id:"panel"},f:[{t:4,f:[{p:[9,17,242],t:7,e:"strong",f:["Username or password is incorrect"]}],n:50,r:"show_error",p:[8,13,207]}," ",{t:4,f:[{t:4,f:[{p:[13,21,412],t:7,e:"div",a:{"class":"menu-item"},f:[{p:[14,25,460],t:7,e:"a",a:{href:"/admin"},f:["Admin"]}]}],n:50,x:{r:["user.group"],s:"_0==\"admin\""},p:[12,17,362]}," ",{p:[17,17,554],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_out",a:{r:[],s:"[]"}}},f:["Log-out"]}],n:50,r:"is_logged_in",p:[11,13,325]},{t:4,n:51,f:[{p:[19,17,657],t:7,e:"form",a:{"class":"pure-form pure-form-stacked"},f:[{p:[20,21,720],t:7,e:"input",a:{placeholder:"Jammer Name",value:[{t:2,r:"new_username",p:[20,61,760]}]}}," ",{p:[21,21,799],t:7,e:"input",a:{type:"password",placeholder:"Password",value:[{t:2,r:"new_password",p:[21,74,852]}]}}]}," ",{p:[23,17,911],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_in",a:{r:[],s:"[]"}}},f:["Log-in"]}],r:"is_logged_in"}]}],n:50,r:"is_open",p:[6,5,154]}]}]};
-    component$2.exports.css = "#panel,#toggle{background-color:#bbb;padding:10px}#profile-toolbar{position:absolute;right:0;top:0;display:flex;flex-direction:column}#toggle{display:inline-block;margin-left:auto}a{cursor:pointer;user-select:none}.menu-item{padding:5px}.menu-item a{color:#00f;text-decoration:none}";
-    var __import1__ = Ractive.extend( component$2.exports );
+    component$3.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"div",a:{id:"profile-toolbar"},f:[{p:[2,5,31],t:7,e:"div",a:{id:"toggle"},f:[{p:[3,9,57],t:7,e:"a",v:{click:{m:"toggle",a:{r:[],s:"[\"is_open\"]"}}},f:[{t:2,x:{r:["user.name"],s:"_0!=\"\"?_0:\"Log-In\""},p:[3,41,89]}]}]}," ",{t:4,f:[{p:[7,9,178],t:7,e:"div",a:{id:"panel"},f:[{t:4,f:[{p:[9,17,242],t:7,e:"strong",f:["Username or password is incorrect"]}],n:50,r:"show_error",p:[8,13,207]}," ",{t:4,f:[{t:4,f:[{p:[13,21,412],t:7,e:"div",a:{"class":"menu-item"},f:[{p:[14,25,460],t:7,e:"a",a:{href:"/admin"},f:["Admin"]}]}],n:50,x:{r:["user.group"],s:"_0==\"admin\""},p:[12,17,362]}," ",{p:[17,17,554],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_out",a:{r:[],s:"[]"}}},f:["Log-out"]}],n:50,r:"is_logged_in",p:[11,13,325]},{t:4,n:51,f:[{p:[19,17,657],t:7,e:"form",a:{"class":"pure-form pure-form-stacked"},f:[{p:[20,21,720],t:7,e:"input",a:{placeholder:"Jammer Name",value:[{t:2,r:"new_username",p:[20,61,760]}]}}," ",{p:[21,21,799],t:7,e:"input",a:{type:"password",placeholder:"Password",value:[{t:2,r:"new_password",p:[21,74,852]}]}}]}," ",{p:[23,17,911],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"log_in",a:{r:[],s:"[]"}}},f:["Log-in"]}],r:"is_logged_in"}]}],n:50,r:"is_open",p:[6,5,154]}]}]};
+    component$3.exports.css = "#panel,#toggle{background-color:#bbb;padding:10px}#profile-toolbar{position:absolute;right:0;top:0;display:flex;flex-direction:column}#toggle{display:inline-block;margin-left:auto}a{cursor:pointer;user-select:none}.menu-item{padding:5px}.menu-item a{color:#00f;text-decoration:none}";
+    var __import1__ = Ractive.extend( component$3.exports );
 
     var component = { exports: {} };
 

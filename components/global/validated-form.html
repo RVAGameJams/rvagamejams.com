@@ -1,0 +1,29 @@
+<form class="sub-panel pure-form pure-form-stacked" on-change="validate()">
+    {{> content}}
+</form>
+<button class="pure-button" on-click="submit()" {{is_valid ? '' : 'disabled'}}>{{{buttonContents}}}</button>
+
+<script>
+    component.exports = {
+        data: {
+            get_error: function ( field_name ) {
+                if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
+                    return this.get('validation_errors')[field_name];
+                }
+                else {
+                    return false;
+                }
+            }
+        },
+        validate: function() {
+            if ( 'validate' in this.parent ) {
+                this.parent.validate()
+            }
+        },
+        submit: function() {
+            if ( 'submit' in this.parent ) {
+                this.parent.submit()
+            }
+        }
+    }
+</script>
