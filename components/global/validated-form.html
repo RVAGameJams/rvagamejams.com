@@ -1,11 +1,22 @@
 <form class="sub-panel pure-form pure-form-stacked" on-change="validate()">
     {{> content}}
 </form>
-<button class="pure-button" on-click="submit()" {{is_valid ? '' : 'disabled'}}>{{{buttonContents}}}</button>
+<button class="pure-button" on-click="submit()" {{is_valid ? '' : 'disabled'}}>
+    {{#if !is_submitting && !is_submit_error}}
+        {{{buttonContents}}}
+    {{elseif is_submit_error}}
+        <i class="fa fa-exclamation-triangle" style="color: red"></i> Error Submitting
+    {{else}}
+        <i class="fa fa-circle-o-notch fa-spin" style="color: blue"></i>
+    {{/if}}
+</button>
 
 <script>
     component.exports = {
         data: {
+            is_submitting: false,
+            is_submit_error: false,
+
             get_error: function ( field_name ) {
                 if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
                     return this.get('validation_errors')[field_name];
@@ -21,8 +32,22 @@
             }
         },
         submit: function() {
-            if ( 'submit' in this.parent ) {
-                this.parent.submit()
+            if ( !this.get('is_submitting') ) {
+                if ( 'submit' in this.parent ) {
+                    var that = this;
+
+                    that.set('is_submitting', true);
+
+                    this.parent.submit()
+                    .end( function(error, response) {
+                        if (!error ) {
+                            that.set('is_submitting', false);
+                        }
+                        else {
+                            that.set('is_submit_error', true)
+                        }
+                    });
+                }
             }
         }
     }

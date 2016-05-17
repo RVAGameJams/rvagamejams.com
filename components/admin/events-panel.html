@@ -111,11 +111,8 @@
                 description: this.get('form.description')
             }
 
-            superagent.post('/admin/events')
+            return superagent.post('/admin/events')
             .send(data)
-            .end( function( error, response ) {
-
-            });
         },
 
         validate: function() {

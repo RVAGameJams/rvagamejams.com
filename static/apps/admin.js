@@ -7,6 +7,9 @@ var RactiveApp = (function (Ractive) {
 
         component$2.exports = {
             data: {
+                is_submitting: false,
+                is_submit_error: false,
+
                 get_error: function ( field_name ) {
                     if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
                         return this.get('validation_errors')[field_name];
@@ -22,13 +25,27 @@ var RactiveApp = (function (Ractive) {
                 }
             },
             submit: function() {
-                if ( 'submit' in this.parent ) {
-                    this.parent.submit()
+                if ( !this.get('is_submitting') ) {
+                    if ( 'submit' in this.parent ) {
+                        var that = this;
+
+                        that.set('is_submitting', true);
+
+                        this.parent.submit()
+                        .end( function(error, response) {
+                            if (!error ) {
+                                that.set('is_submitting', false);
+                            }
+                            else {
+                                that.set('is_submit_error', true)
+                            }
+                        });
+                    }
                 }
             }
         }
 
-    component$2.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},v:{change:{m:"validate",a:{r:[],s:"[]"}}},f:[{t:8,r:"content",p:[2,5,80]}]}," ",{p:[4,1,102],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},m:[{t:2,x:{r:["is_valid"],s:"_0?\"\":\"disabled\""},p:[4,49,150]}],f:[{t:3,r:"buttonContents",p:[4,80,181]}]}]};
+    component$2.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},v:{change:{m:"validate",a:{r:[],s:"[]"}}},f:[{t:8,r:"content",p:[2,5,80]}]}," ",{p:[4,1,102],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},m:[{t:2,x:{r:["is_valid"],s:"_0?\"\":\"disabled\""},p:[4,49,150]}],f:[{t:4,f:[{t:3,r:"buttonContents",p:[6,9,237]}],n:50,x:{r:["is_submitting","is_submit_error"],s:"!_0&&!_1"},p:[5,5,186]},{t:4,n:51,f:[{t:4,n:50,x:{r:["is_submit_error"],s:"_0"},f:[{p:[8,9,297],t:7,e:"i",a:{"class":"fa fa-exclamation-triangle",style:"color: red"}}," Error Submitting"]},{t:4,n:50,x:{r:["is_submit_error"],s:"!(_0)"},f:[" ",{p:[10,9,397],t:7,e:"i",a:{"class":"fa fa-circle-o-notch fa-spin",style:"color: blue"}}]}],x:{r:["is_submitting","is_submit_error"],s:"!_0&&!_1"}}]}]};
     var __import0__$1 = Ractive.extend( component$2.exports );
 
     var component$1 = { exports: {} };
@@ -76,11 +93,8 @@ var RactiveApp = (function (Ractive) {
                     description: this.get('form.description')
                 }
 
-                superagent.post('/admin/events')
+                return superagent.post('/admin/events')
                 .send(data)
-                .end( function( error, response ) {
-
-                });
             },
 
             validate: function() {
