@@ -2,12 +2,10 @@
     {{> content}}
 </form>
 <button class="pure-button" on-click="submit()" {{is_valid ? '' : 'disabled'}}>
-    {{#if !is_submitting && !is_submit_error}}
+    {{#if !is_submitting}}
         {{{buttonContents}}}
-    {{elseif is_submit_error}}
-        <i class="fa fa-exclamation-triangle" style="color: red"></i> Error Submitting
     {{else}}
-        <i class="fa fa-circle-o-notch fa-spin" style="color: blue"></i>
+        <i class="fa fa-circle-o-notch fa-spin" style="color: blue"></i> Submitting
     {{/if}}
 </button>
 
@@ -15,8 +13,6 @@
     component.exports = {
         data: {
             is_submitting: false,
-            is_submit_error: false,
-            is_success: false,
 
             get_error: function ( field_name ) {
                 if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
@@ -51,14 +47,12 @@
 
                     that.set('is_submitting', true);
 
-                    this.parent.submit()
+                    var result = this.parent.submit();
+                    result[0]
                     .end( function(error, response) {
-                        if (!error ) {
-                            that.set('is_submitting', false);
-                        }
-                        else {
-                            that.set('is_submit_error', true)
-                        }
+                        that.set('is_submitting', false);
+
+                        result[1]();
                     });
                 }
             }

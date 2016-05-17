@@ -109,10 +109,23 @@
                 end: Date.parse( this.get('form.end') ),
                 headline: this.get('form.headline'),
                 description: this.get('form.description')
-            }
+            };
 
-            return superagent.post('/admin/events')
-            .send(data)
+            var that = this;
+            return [
+                superagent.post('/admin/events').send(data),
+                function(error, result) {
+                    var notifier = RGJ.app.findComponent('notifier');
+
+                    if (!error) {
+                        notifier.push("<span style='color: green'>Created new event: " + that.get('form.name') + "</span>");
+                    }
+                    else {
+                        notifier.push("<span style='color: red'>Error submitting event: " + that.get('form.name') + "</span>");
+                    }
+                }
+            ];
+
         },
 
         validate: function() {
