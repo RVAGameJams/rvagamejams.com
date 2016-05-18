@@ -85,11 +85,12 @@ def admin_events():
         try:
             event_document = mongo.db.Events.insert_one({
                 'name': request.json['name'],
+                'headline': request.json['headline'],
+                'cover-image': helpers.image_to_mongo( request.json['cover_image'] ),
+
                 'start': datetime.fromtimestamp( int( request.json['start'] ) / 1000 ),
                 'end': datetime.fromtimestamp( int( request.json['end'] ) / 1000 ),
-                'headline': request.json['headline'],
-                'description': request.json['description'],
-                'cover-image': helpers.image_to_mongo( request.json['cover_image'] )
+                'description': request.json['description']
             })
 
             return make_response('', 200)

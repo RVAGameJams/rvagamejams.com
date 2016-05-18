@@ -63,11 +63,12 @@ var RactiveApp = (function (Ractive) {
             data: {
                 form: {
                     name: '',
+                    headline: '',
+                    cover_image: null,
+
                     start: '',
                     end: '',
-                    headline: '',
-                    description: '',
-                    cover_image: null
+                    description: ''
                 },
 
                 cover_image_rendered: null,
@@ -128,7 +129,7 @@ var RactiveApp = (function (Ractive) {
                 var is_valid = true;
                 var validation_errors = {};
                 for ( var item in form ) {
-                    if ( form[item] === null || form[item] === '' ) {
+                    if ( ['name', 'headline', 'cover_image'].indexOf(item) !== -1 && ( form[item] === null || form[item] === '' ) ) {
                         is_valid = false;
                     }
 
@@ -140,12 +141,17 @@ var RactiveApp = (function (Ractive) {
                     }
                 }
 
+                if ( this.get().cover_image_encoded && !this.get().cover_image_encoded.type.startsWith("image") ) {
+                    is_valid = false;
+                    validation_errors['cover_image'] = "Not a recognized image format";
+                }
+
                 this.set('is_valid', is_valid);
                 this.set('validation_errors', validation_errors);
             }
         };
 
-    component$1.exports.template = {v:3,t:[{p:[3,1,59],t:7,e:"validated-form",a:{buttonContents:"<i class='fa fa-plus'></i> Add Event"},f:[{p:[4,5,134],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"form.name",p:[4,44,173]}]}}," ",{p:[5,5,193],t:7,e:"span",f:["Cover Image"]},{p:[5,30,218],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"form.cover_image",p:[5,73,261]}]}}," ",{p:[6,5,288],t:7,e:"img",a:{src:[{t:2,r:"cover_image_rendered",p:[6,15,298]}]}}," ",{p:[7,5,329],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"form.start",p:[7,44,368]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"start\")?\"invalid\":\"\""},p:[7,95,419]}]}}," ",{p:[7,137,461],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"start\")?_0(\"start\"):\"\""},p:[7,157,481]}]}," ",{p:[8,5,542],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"form.end",p:[8,42,579]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"end\")?\"invalid\":\"\""},p:[8,91,628]}]}}," ",{p:[8,131,668],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"end\")?_0(\"end\"):\"\""},p:[8,151,688]}]}," ",{p:[9,5,745],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"form.headline",p:[9,62,802]}]}}," ",{p:[10,5,837],t:7,e:"div",f:[{p:[11,9,851],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[11,25,867]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[12,9,989],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[12,25,1005]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[15,13,1178],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"form.description",p:[15,75,1240]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[14,9,1128]},{t:4,n:51,f:[{p:[17,13,1302],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[18,17,1353]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}]};
+    component$1.exports.template = {v:3,t:[{p:[3,1,59],t:7,e:"validated-form",a:{buttonContents:"<i class='fa fa-plus'></i> Add Event"},f:[{p:[4,5,134],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"form.name",p:[4,44,173]}]}}," ",{p:[5,5,193],t:7,e:"span",f:["Cover Image"]},{p:[5,30,218],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"form.cover_image",p:[5,73,261]}]}}," ",{t:4,f:[{p:[7,9,337],t:7,e:"span",a:{"class":"error"},f:[{t:2,rx:{r:"validation_errors",m:[{r:[],s:"\"cover_image\""}]},p:[7,29,357]}]}],n:50,rx:{r:"validation_errors",m:[{r:[],s:"\"cover_image\""}]},p:[6,5,288]},{t:4,n:51,f:[{t:4,n:50,x:{r:["cover_image_rendered"],s:"_0"},f:[{p:[9,9,445],t:7,e:"img",a:{src:[{t:2,r:"cover_image_rendered",p:[9,19,455]}]}}]}],rx:{r:"validation_errors",m:[{r:[],s:"\"cover_image\""}]}}," ",{p:[11,5,498],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"form.start",p:[11,44,537]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"start\")?\"invalid\":\"\""},p:[11,95,588]}]}}," ",{p:[11,137,630],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"start\")?_0(\"start\"):\"\""},p:[11,157,650]}]}," ",{p:[12,5,711],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"form.end",p:[12,42,748]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"end\")?\"invalid\":\"\""},p:[12,91,797]}]}}," ",{p:[12,131,837],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"end\")?_0(\"end\"):\"\""},p:[12,151,857]}]}," ",{p:[13,5,914],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"form.headline",p:[13,62,971]}]}}," ",{p:[14,5,1006],t:7,e:"div",f:[{p:[15,9,1020],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[15,25,1036]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[16,9,1158],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[16,25,1174]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[19,13,1347],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"form.description",p:[19,75,1409]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[18,9,1297]},{t:4,n:51,f:[{p:[21,13,1471],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[22,17,1522]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}]};
     component$1.exports.css = "input{width:250px}textarea{width:500px;resize:none}.headline{height:4em}.description{height:12em;margin-top:0}.tab{display:inline-block;width:100px;padding:5px;margin-top:10px;text-align:center;font-variant:small-caps;user-select:none;cursor:pointer}.tab.active{border-bottom:2px solid #000}.description-rendered{background-color:#fff;width:100%;padding:10px}.invalid{border-color:red!important}span.error{color:red}";
     component$1.exports.components = { "validated-form": __import0__$1 };
     var __import0__ = Ractive.extend( component$1.exports );

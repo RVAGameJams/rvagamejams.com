@@ -13,15 +13,6 @@
     component.exports = {
         data: {
             is_submitting: false,
-
-            get_error: function ( field_name ) {
-                if ( this.get('validation_errors') && field_name in this.get('validation_errors') ) {
-                    return this.get('validation_errors')[field_name];
-                }
-                else {
-                    return false;
-                }
-            }
         },
         oninit: function() {
             // validate whenever form changes

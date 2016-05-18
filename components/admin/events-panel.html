@@ -3,9 +3,13 @@
 <validated-form buttonContents="<i class='fa fa-plus'></i> Add Event">
     <input placeholder="Event Name" value="{{form.name}}">
     <span>Cover Image </span><input type="file" id="cover-image" value="{{form.cover_image}}">
-    <img src="{{cover_image_rendered}}">
-    <input placeholder="Start Time" value="{{form.start}}" type="datetime-local" class="error {{get_error('start') ? 'invalid' : ''}}"> <span class="error">{{get_error('start') ? get_error('start') : '' }}</span>
-    <input placeholder="End Time" value="{{form.end}}" type="datetime-local" class="error {{get_error('end') ? 'invalid' : ''}}"> <span class="error">{{get_error('end') ? get_error('end') : '' }}</span>
+    {{#if validation_errors['cover_image']}}
+        <span class="error">{{validation_errors['cover_image']}}</span>
+    {{elseif cover_image_rendered}}
+        <img src="{{cover_image_rendered}}">
+    {{/if}}
+    <input placeholder="Start Time" value="{{form.start}}" type="datetime-local" class="error {{validation_errors['start') ? 'invalid' : ''}}"> <span class="error">{{validation_errors['start']' ? validation_errors['start']' : '' }}</span>
+    <input placeholder="End Time" value="{{form.end}}" type="datetime-local" class="error {{validation_errors['end']' ? 'invalid' : ''}}"> <span class="error">{{validation_errors['end']' ? validation_errors['end']' : '' }}</span>
     <textarea class="headline" placeholder="Headline" value="{{form.headline}}"></textarea>
     <div>
         <div class="tab {{ description_tab == 'markdown' ? 'active' : '' }}" on-click="set('description_tab', 'markdown')">Markdown</div>
@@ -72,11 +76,12 @@
         data: {
             form: {
                 name: '',
+                headline: '',
+                cover_image: null,
+
                 start: '',
                 end: '',
-                headline: '',
-                description: '',
-                cover_image: null
+                description: ''
             },
 
             cover_image_rendered: null,
@@ -137,7 +142,7 @@
             var is_valid = true;
             var validation_errors = {};
             for ( var item in form ) {
-                if ( form[item] === null || form[item] === '' ) {
+                if ( ['name', 'headline', 'cover_image'].indexOf(item) !== -1 && ( form[item] === null || form[item] === '' ) ) {
                     is_valid = false;
                 }
 
@@ -147,6 +152,11 @@
                         validation_errors[item] = "Can't Parse Datetime";
                     }
                 }
+            }
+
+            if ( this.get().cover_image_encoded && !this.get().cover_image_encoded.type.startsWith("image") ) {
+                is_valid = false;
+                validation_errors['cover_image'] = "Not a recognized image format";
             }
 
             this.set('is_valid', is_valid);
