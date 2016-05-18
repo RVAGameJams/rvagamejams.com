@@ -52,7 +52,7 @@
                     .end( function(error, response) {
                         that.set('is_submitting', false);
 
-                        result[1]();
+                        result[1](error, result);
                     });
                 }
             }

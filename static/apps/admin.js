@@ -47,7 +47,7 @@ var RactiveApp = (function (Ractive) {
                         .end( function(error, response) {
                             that.set('is_submitting', false);
 
-                            result[1]();
+                            result[1](error, result);
                         });
                     }
                 }
@@ -109,10 +109,13 @@ var RactiveApp = (function (Ractive) {
                         var notifier = RGJ.app.findComponent('notifier');
 
                         if (!error) {
-                            notifier.push("<span style='color: green'>Created new event: " + that.get('form.name') + "</span>");
+                            notifier.push("<span><i class='fa fa-check-circle' style='color: green'></i> Created new event: <b>" + that.get('form.name') + "</b></span>");
+                            that.set('form', {});
+                            that.set('cover_image_encoded', null);
+                            that.set('cover_image_rendered', null);
                         }
                         else {
-                            notifier.push("<span style='color: red'>Error submitting event: " + that.get('form.name') + "</span>");
+                            notifier.push("<span><i class='fa fa-exclamation-triangle' style='color: red'></i> Error submitting event: " + that.get('form.name') + "</span>");
                         }
                     }
                 ];
