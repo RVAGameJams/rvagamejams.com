@@ -87,7 +87,7 @@
 
         onchange: function(changes) {
             if ( 'form.description' in changes ) {
-                this.set( 'description_rendered', markdown.toHTML( changes['form.description'] ) )
+                this.set( 'description_rendered', markdown.toHTML( changes['form.description'] ) );
             }
             if ( 'form.cover_image' in changes ) {
                 var that = this;
@@ -135,7 +135,7 @@
             var form = this.get('form');
 
             var is_valid = true;
-            var validation_errors = {}
+            var validation_errors = {};
             for ( var item in form ) {
                 if ( form[item] === null || form[item] === '' ) {
                     is_valid = false;
@@ -152,5 +152,5 @@
             this.set('is_valid', is_valid);
             this.set('validation_errors', validation_errors);
         }
-    }
+    };
 </script>

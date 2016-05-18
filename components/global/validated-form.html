@@ -29,7 +29,7 @@
                 for ( var change in changes ) {
                     if ( change.startsWith('form.') ) {
                         if ( 'validate' in this ) {
-                            this.validate()
+                            this.validate();
                         }
                     }
                 }
@@ -37,7 +37,7 @@
         },
         validate: function() {
             if ( 'validate' in this.parent ) {
-                this.parent.validate()
+                this.parent.validate();
             }
         },
         submit: function() {
@@ -57,5 +57,5 @@
                 }
             }
         }
-    }
+    };
 </script>

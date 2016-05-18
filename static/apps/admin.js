@@ -24,7 +24,7 @@ var RactiveApp = (function (Ractive) {
                     for ( var change in changes ) {
                         if ( change.startsWith('form.') ) {
                             if ( 'validate' in this ) {
-                                this.validate()
+                                this.validate();
                             }
                         }
                     }
@@ -32,7 +32,7 @@ var RactiveApp = (function (Ractive) {
             },
             validate: function() {
                 if ( 'validate' in this.parent ) {
-                    this.parent.validate()
+                    this.parent.validate();
                 }
             },
             submit: function() {
@@ -52,7 +52,7 @@ var RactiveApp = (function (Ractive) {
                     }
                 }
             }
-        }
+        };
 
     component$2.exports.template = {v:3,t:[{p:[1,1,0],t:7,e:"form",a:{"class":"sub-panel pure-form pure-form-stacked"},v:{change:{m:"validate",a:{r:[],s:"[]"}}},f:[{t:8,r:"content",p:[2,5,80]}]}," ",{p:[4,1,102],t:7,e:"button",a:{"class":"pure-button"},v:{click:{m:"submit",a:{r:[],s:"[]"}}},m:[{t:2,x:{r:["is_valid"],s:"_0?\"\":\"disabled\""},p:[4,49,150]}],f:[{t:4,f:[{t:3,r:"buttonContents",p:[6,9,217]}],n:50,x:{r:["is_submitting"],s:"!_0"},p:[5,5,186]},{t:4,n:51,f:[{p:[8,9,259],t:7,e:"i",a:{"class":"fa fa-circle-o-notch fa-spin",style:"color: blue"}}," Submitting"],x:{r:["is_submitting"],s:"!_0"}}]}]};
     var __import0__$1 = Ractive.extend( component$2.exports );
@@ -78,7 +78,7 @@ var RactiveApp = (function (Ractive) {
 
             onchange: function(changes) {
                 if ( 'form.description' in changes ) {
-                    this.set( 'description_rendered', markdown.toHTML( changes['form.description'] ) )
+                    this.set( 'description_rendered', markdown.toHTML( changes['form.description'] ) );
                 }
                 if ( 'form.cover_image' in changes ) {
                     var that = this;
@@ -126,7 +126,7 @@ var RactiveApp = (function (Ractive) {
                 var form = this.get('form');
 
                 var is_valid = true;
-                var validation_errors = {}
+                var validation_errors = {};
                 for ( var item in form ) {
                     if ( form[item] === null || form[item] === '' ) {
                         is_valid = false;
@@ -143,7 +143,7 @@ var RactiveApp = (function (Ractive) {
                 this.set('is_valid', is_valid);
                 this.set('validation_errors', validation_errors);
             }
-        }
+        };
 
     component$1.exports.template = {v:3,t:[{p:[3,1,59],t:7,e:"validated-form",a:{buttonContents:"<i class='fa fa-plus'></i> Add Event"},f:[{p:[4,5,134],t:7,e:"input",a:{placeholder:"Event Name",value:[{t:2,r:"form.name",p:[4,44,173]}]}}," ",{p:[5,5,193],t:7,e:"span",f:["Cover Image"]},{p:[5,30,218],t:7,e:"input",a:{type:"file",id:"cover-image",value:[{t:2,r:"form.cover_image",p:[5,73,261]}]}}," ",{p:[6,5,288],t:7,e:"img",a:{src:[{t:2,r:"cover_image_rendered",p:[6,15,298]}]}}," ",{p:[7,5,329],t:7,e:"input",a:{placeholder:"Start Time",value:[{t:2,r:"form.start",p:[7,44,368]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"start\")?\"invalid\":\"\""},p:[7,95,419]}]}}," ",{p:[7,137,461],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"start\")?_0(\"start\"):\"\""},p:[7,157,481]}]}," ",{p:[8,5,542],t:7,e:"input",a:{placeholder:"End Time",value:[{t:2,r:"form.end",p:[8,42,579]}],type:"datetime-local","class":["error ",{t:2,x:{r:["get_error"],s:"_0(\"end\")?\"invalid\":\"\""},p:[8,91,628]}]}}," ",{p:[8,131,668],t:7,e:"span",a:{"class":"error"},f:[{t:2,x:{r:["get_error"],s:"_0(\"end\")?_0(\"end\"):\"\""},p:[8,151,688]}]}," ",{p:[9,5,745],t:7,e:"textarea",a:{"class":"headline",placeholder:"Headline",value:[{t:2,r:"form.headline",p:[9,62,802]}]}}," ",{p:[10,5,837],t:7,e:"div",f:[{p:[11,9,851],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"markdown\"?\"active\":\"\""},p:[11,25,867]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"markdown\"]"}}},f:["Markdown"]}," ",{p:[12,9,989],t:7,e:"div",a:{"class":["tab ",{t:2,x:{r:["description_tab"],s:"_0==\"rendered\"?\"active\":\"\""},p:[12,25,1005]}]},v:{click:{m:"set",a:{r:[],s:"[\"description_tab\",\"rendered\"]"}}},f:["Rendered"]}," ",{t:4,f:[{p:[15,13,1178],t:7,e:"textarea",a:{"class":"description",placeholder:"Description",value:[{t:2,r:"form.description",p:[15,75,1240]}]}}],n:50,x:{r:["description_tab"],s:"_0==\"markdown\""},p:[14,9,1128]},{t:4,n:51,f:[{p:[17,13,1302],t:7,e:"div",a:{"class":"description-rendered"},f:[{t:3,r:"description_rendered",p:[18,17,1353]}]}],x:{r:["description_tab"],s:"_0==\"markdown\""}}]}]}]};
     component$1.exports.css = "input{width:250px}textarea{width:500px;resize:none}.headline{height:4em}.description{height:12em;margin-top:0}.tab{display:inline-block;width:100px;padding:5px;margin-top:10px;text-align:center;font-variant:small-caps;user-select:none;cursor:pointer}.tab.active{border-bottom:2px solid #000}.description-rendered{background-color:#fff;width:100%;padding:10px}.invalid{border-color:red!important}span.error{color:red}";
