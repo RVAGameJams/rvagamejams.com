@@ -1,0 +1,16 @@
+title::Darbot Saves Science
+---
+author::science4cake
+---
+event::ld24
+---
+playlink::http://www.scirra.com/arcade/action/1752/darbot-saves-science
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-24/?action=preview&uid=16607
+---
+description::This is a little platformer made with the free version of construct 2. 
+
+arrow keys to run and jump 
+space to shoot 
+tab to change weapons 
+r to retry

@@ -1,0 +1,10 @@
+title::Civil War
+---
+author::ninjalan
+---
+event::ld26
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-26/?action=preview&uid=23571
+---
+description::
+Civil war is a multiplayer minimalistic war game. Try to capture enemy squares! Clicking on an opponent square will fill any and all squares that have allied squares in the same row or column.

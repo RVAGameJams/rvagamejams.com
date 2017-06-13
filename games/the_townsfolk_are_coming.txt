@@ -1,0 +1,16 @@
+title::The townsfolk are coming!
+---
+author::chuck_mcnugget
+---
+event::ld25
+---
+playlink::http://www.newgrounds.com/portal/view/607902?updated=1
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=12759
+---
+description::
+Yeah... I completely ran out of time, because I decided to waste all of my time painting a portrait of Frankenstein. Press space to dodge to villagers. 
+
+Update: 
+
+I FIXED IT!

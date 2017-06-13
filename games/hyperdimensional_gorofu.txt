@@ -1,0 +1,20 @@
+title::Hyperdimensional Gorofu Shot Champion
+---
+author::uncade & 01010111
+---
+event::ld26
+---
+playlink::http://x01010111.com/content/unity/hdgsc/hdgsc.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-26/?action=preview&uid=3294
+---
+description::
+Galaxy justice is in danger! Will you sink all the shot to win FREEDOM? 
+
+01010111 - Art and Music 
+Uncade - Programming 
+
+Controls: SPACE - Aim, Execute Shot, Activate Variable Golfball Modeâ�¢ 
+Arrow Keys/WASD - Pilot while Variable Golfball Modeâ�¢ is activated 
+
+Made with Unity, Blender, Photoshop, & FL Studio 

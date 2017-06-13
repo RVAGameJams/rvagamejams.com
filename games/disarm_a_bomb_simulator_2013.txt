@@ -1,0 +1,12 @@
+title::Disarm-A-Bomb Simulator 2013
+---
+author::chuck_mcnugget
+---
+event::ld27
+---
+playlink::http://www.newgrounds.com/dump/item/61de6df8c979a3afdb3c349116368770
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=12759
+---
+description::
+Try to match the numbers on the board, if the wires connect to the same number (letters do not matter), click the wire to cut it and disarm the bomb. I wanted to add a couple of different levels but ran into issues making the art assets. Still had fun and learned a little more, as usual!

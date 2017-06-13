@@ -1,0 +1,19 @@
+title::Fire Exit
+---
+author::psykobilliethekid & uncade
+---
+event::ld29
+---
+playlink::https://db.tt/T5CP3DAd
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=32709
+---
+description::
+A puzzle game where you control two characters on the screen (who are on fire but not getting hurt) and try to get them to the exit. You can also flip the screen for a different perspective. 
+
+Made as a team with Uncade. Check out his awesome stuff! 
+
+How To Play: 
+A and D | Arrow keys | Controller analog : move 
+Spacebar | A button : jump 
+B key | B button : flip the screen

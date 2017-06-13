@@ -1,0 +1,11 @@
+title::Pixeloution
+---
+author::chuck_mcnugget
+---
+event::ld24
+---
+playlink::http://www.newgrounds.com/portal/view/601792?updated=1
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-24/?action=preview&uid=12759
+---
+description::START A PIXELOUTION!!

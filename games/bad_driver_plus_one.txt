@@ -1,0 +1,14 @@
+title::Bad Driver! +1
+---
+author::uncade
+---
+event::ld25
+---
+playlink::http://www.kongregate.com/games/Uncade/bad-driver-1
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=3294
+---
+description::
+This game is an homage to Noby Noby Boy where you get points for being a terrible driver. 
+
+I am a bad game designer and should feel bad :P

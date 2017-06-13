@@ -1,0 +1,14 @@
+title::It's Common Knowledge That Animals Hate Stick Figures
+---
+author::Galan
+---
+event::ld28
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-28/?action=preview&uid=11241
+---
+description::
+The title says it all! Sorta... Help your stick figure escape from animals by reaching the floating green arrow at the end of the stage, all while learning about the food chain, and your stick figure's place in it! It's high art! Very Meaningful! NOT AT ALL ABSURD! 
+
+And be forewarned: you only get one special move. 
+
+Change the direction your character is facing by moving the blue target circle with your MOUSE, and move your stick figure with the WASD keys. [W] makes him approach the cursor, [S] backpedals, and [A] and [D] strafes. To use your special, click the LEFT MOUSE button. Circular colored powerups litter the stages: don't forget to try all four (plus the one you start with).

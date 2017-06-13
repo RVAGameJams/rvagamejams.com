@@ -1,0 +1,9 @@
+event::Ludum Dare 32
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2015-4-17
+---
+dateend::2015-4-20

@@ -1,0 +1,16 @@
+title::Neurovirus
+---
+author::tokija
+---
+event::ld25
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=16660
+---
+description::
+Requires python 2.6 / pygame 1.9.1 . Apparently python 3.0 does not work with pygame (at least on a Mac). first time using pygame, so idk for sure 
+
+The game itself is sort of just a strange interactive art piece, since I ran out of time to make any actual way to win or lose. Press TAB to change between types of virus/robot/organism thingies and click to place them on the screen. Just place a couple and wait for about 15 minutes, and you should start seeing some strange patterns. Don't place too many because it may cause the program to crash. Don't leave it running forever either, because eventually it will crash because there is no limit on how many creatures can be created. Spits out a little debugging info to the console. Music was made in SunVox, sprites made in SpriteSomething for ipad, program coded in MacVim. 
+
+
+Edit: Added some additional screenshots, but I can't upload them for some reason, so they are here: 
+http://www.markadkinshastings.com/?p=44

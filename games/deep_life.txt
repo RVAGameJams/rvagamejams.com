@@ -1,0 +1,26 @@
+title::Deep Life
+---
+author::01010111
+---
+event::ld28
+---
+playlink::http://x01010111.com/play/deep/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-28/?action=preview&uid=11474
+---
+description::
+WARNING! This game looks like a shmup, but it is in fact VERY narrative driven and dialog heavy. Sorry! 
+
+Controls: 
+SPACEBAR - Navigate menu, Skip Dialog, Aim Laser 
+ARROW KEYS - Movement 
+
+I would have liked for there to be more action, but this theme really threw me for a loop. Anyway, hope you enjoy! 
+
+Tools used: 
+-Flixel 
+-FlashDevelop 
+-InterstellarSelfieStation 
+-Photoshop 
+-FLStudio 
+-Plogue Chipsounds

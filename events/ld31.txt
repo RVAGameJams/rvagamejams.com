@@ -1,0 +1,9 @@
+event::Ludum Dare 31
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2014-12-5
+---
+dateend::2014-12-8

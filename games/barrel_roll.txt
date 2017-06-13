@@ -1,0 +1,24 @@
+title::Barrel Roll
+---
+author::omaha
+---
+event::ld24
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-24/?action=preview&uid=5229
+---
+description::Your ship evolves as you play the game. Pick up weapons and have parts of your ship break off and re-structure itself as you navigate a narrow corridor. 
+
+Use A/D to steer your ship down the alley. 
+
+Hit Enter to fire your weapon. 
+
+Thanks for checking it out. 
+
+
+To play: 
+
+download the .jar and double-click to run. 
+
+if that doesn't work, try running it from the command line with: 
+
+java -jar barrel-roll.jar

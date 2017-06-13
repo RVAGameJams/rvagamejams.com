@@ -1,0 +1,24 @@
+title::mungo:wrenchlord
+---
+author::01010111
+---
+event::ld29
+---
+playlink::http://x01010111.com/play/mungo/mungo_wrenchlord.swf
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=11474
+---
+description::
+It is HIGHLY recommended that you use a 360 controller to play, but for scrubs with no gamepad use secret code X+C to play, mouse for minigames, and ESC to exit on Windows :) 
+
+the water pressure in Benten is wack! help mungo fix everybody's pipes! 
+
+Thanks @rezoner for the awesome splash screen :D 
+
+(back button on XBOX360 controller quits on Windows) 
+
+Stuff used: 
+
+HaxeFlixel (SUPER awesome cross platform Flixel clone) 
+Genny (YM2612 VST thx superjoebob, thx for showing me magdev) 
+Chipsounds (10 min to create sound effects? k)

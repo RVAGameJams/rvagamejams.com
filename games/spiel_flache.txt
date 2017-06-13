@@ -1,0 +1,17 @@
+title::Spiel-Flache
+---
+author::omaha
+---
+event::ld29
+---
+playlink::http://whilesoftware.com/static/spiel-flache/web-player.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=5229
+---
+description::
+A quick adventure with our friend the Quadropus. 
+
+Spacebar to thrust 
+Left/Right to steer your tentacles 
+
+Source Code here: http://whilesoftware.com/static/spiel-flache/ld29.compo-source.tgz

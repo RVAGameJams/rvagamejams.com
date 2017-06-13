@@ -1,0 +1,14 @@
+title::Ithyxsk
+---
+author::Galan
+---
+event::ld25
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=11241
+---
+description::
+You are Ithyxsh, The Crimson Blight. A pitiful human has come to face you in your lair. Let him face his death. 
+
+Keys: [X] and [Z] to attack, [space] to switch between standing and flying. 
+
+Edit: added Windows a Linux 32-bit builds, and worked around engine bug causing crash at start.

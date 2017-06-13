@@ -1,0 +1,12 @@
+title::Was a Roguelike
+---
+author::Galan
+---
+event::ld27
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=11241
+---
+description::
+Escape from the evil maze (in the mind of a twisted child) in only 10 seconds. Don't worry - you can keep your powerups when you die. 
+
+Notes: The Mac version is completely untested, let me know if it works for you.

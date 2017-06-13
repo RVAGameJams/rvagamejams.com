@@ -1,0 +1,17 @@
+title::Submarine Simulator
+---
+author::Galan
+---
+event::ld29
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=11241
+---
+description::
+Ever wanted to be a sub. No? You wanted to be a goat? Too bad. You're a sub. 
+
+There are two secrets to be found. Look for them. 
+
+Controls: 
+WASDRF-Move 
+Mouse-Look 
+Left Mouse-Operate claw, other???

@@ -1,0 +1,22 @@
+title::Honey Bundles
+---
+author::foolmoron
+---
+event::ld29
+---
+playlink::http://foolmoron.itch.io/honeybundles
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=36186
+---
+description::
+CONTROLS: 
+-MOVE the mouse to the top and bottom of the screen to move the bee 
+-Right click to OPEN and CLOSE the background 
+-CLICK AND DRAG the blocks to move them 
+
+PLAY ONLINE HERE: http://foolmoron.itch.io/honeybundles 
+Unity build file here: https://www.dropbox.com/s/zhpq1u55d6wrzuh/honeybundles.unity3d 
+
+Created with: 
+Unity 
+GIMP 2.0

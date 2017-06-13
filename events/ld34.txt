@@ -1,0 +1,9 @@
+event::Ludum Dare 34
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2020-12-11
+---
+dateend::2020-12-14

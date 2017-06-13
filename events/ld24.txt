@@ -1,0 +1,9 @@
+event::Ludum Dare 24
+---
+venue::Citizen
+---
+vlink::http://www.citizenrva.com/
+---
+datestart::2012-8-24
+---
+dateend::2012-8-27

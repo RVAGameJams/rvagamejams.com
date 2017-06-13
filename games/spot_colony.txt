@@ -1,0 +1,14 @@
+title::Spot Colony
+---
+author::2DArray
+---
+event::ld25
+---
+playlink::https://dl.dropbox.com/u/29134327/Spot%20Colony/Web%20Player/Spot%20Colony.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=17855
+---
+description::
+An exploratory game involving a growing hive of Spots. Put your tinkering cap on and see if you can figure out how to win. 
+
+I didn't spend as much time on this as I should have, but I got about twelve hours of solid work in and I'm happy with how it came out. Hooray!

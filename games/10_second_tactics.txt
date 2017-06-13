@@ -1,0 +1,21 @@
+title::10 Second Tactics
+---
+author::Schwiggy
+---
+event::ld27
+---
+playlink::https://dl.dropboxusercontent.com/u/9633551/10secondtactics/index.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=3954
+---
+description::
+You have 10 seconds to command all of your troops every turn. Not everyone will be remembered, but you have to work as a team to succeed. Click and drag to move a unit, then click again to fire. Some weapons can be fired continuously through the enemies turn. 
+
+WASD moves the view and QE zooms in and out. Or you can just use the mouse and scroll wheel. It's easier to give commands up close but seeing the big picture has its benefits. 
+
+Tools: 
+GameMaker Studio 
+Inkscape 
+Garage Band 
+
+Note: Some people are experiencing a glitch on the web version where the AI freezes the screen until the end of its turn. This is a bug with GM:Studio so if you have Windows I advise downloading the PC version. Sorry for the inconvenience :/ 

@@ -1,0 +1,21 @@
+title::Negemon
+---
+author::01010111
+---
+event::ld24
+---
+playlink::http://www.newgrounds.com/portal/view/601786
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-24/?action=preview&uid=11474
+---
+description::This game was created from scratch over the past 24 hours (late start!) so I apologize for the short length of the game. 
+
+On the theme of evolution, I obviously wanted to create a game based off of some game that I've never played before that I understand to be chock-full of evolving creatures. I chose the title Negemon because Negentropicmon wouldn't as a logo. 
+
+I hope you enjoy it! 
+
+I neglected to mention the frameworks and tools I used! 
+
+Frameworks: Flixel, Flixel Power Tools, and Greensock TweenLite. (all of these are required to build source) 
+
+Tools: FlashDevelop, Photoshop, MilkyTracker, FLStudio, Magical 8bit Plugin, and Bfxr.

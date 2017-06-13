@@ -1,0 +1,9 @@
+event::Ludum Dare 25
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2012-12-14
+---
+dateend::2012-12-17

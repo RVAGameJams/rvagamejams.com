@@ -1,0 +1,18 @@
+title::Skeletal: A Barebones RPG
+---
+author::Galan
+---
+event::ld26
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-26/?action=preview&uid=11241
+---
+description::
+Take an generic, bad, old-school RPG, and strip out everything but the bones. That elusive thing called 'fun'? Make sure you grab that too. And make sure to accentuate the grind. 
+
+Awful game? Social commentary? Sure, why not! 
+
+-ADDED BONUS: It's short. 
+
+
+
+CONTROLS: Arrow keys to navigate, [Z] to select.

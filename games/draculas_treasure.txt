@@ -1,0 +1,34 @@
+title::Dracula's Treasure
+---
+author::01010111
+---
+event::ld25
+---
+playlink::http://www.newgrounds.com/portal/view/607828
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-25/?action=preview&uid=11474
+---
+description::
+This is my entry - Dracula's Treasure! You play as Dracula, who is being evicted from his foreclosed mansion. Priests are trying to kick you out, but you have to collect all of your riches before you leave! This is kind of similar to games like Flicky and City Connection, but the player wraps around the screen (a la Asteroids). 
+
+You use the Arrow Keys to run and the Space key to Jump - if you can collect the powerup, you will be transformed into a bat and can clip through the platforms (as well as wrap vertically around the screen). 
+
+The point of the game is to collect all of the treasures and reach the exit without getting hit by one of the priests. 
+
+PROTIP - You can game the priests behavior by jumping to get them to jump to higher platforms! 
+
+I hope you folks enjoy it! 
+
+PS - The Player, Enemies, Collectibles and everything all exist in the one PlayState class, which is pretty heavily commented for people new at Flixel. It's not pretty code, but it might help someone :) 
+
+PPS - Forgot to mention, for this project I used: 
+
+Libraries: 
+-Flixel 2.55 
+-Flixel Power Tools 
+
+IDE - FlashDevelop 
+
+Music - MilkyTracker 
+
+Sound - Plogue Chipsounds

@@ -1,0 +1,9 @@
+event::Ludum Dare 36
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2016-8-26
+---
+dateend::2016-8-29

@@ -1,0 +1,17 @@
+title::Teddy & His Cat
+---
+author::ruthiepee
+---
+event::ld29
+---
+playlink::http://ruthieswebsite.com/teddy_and_his_cat/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-29/?action=preview&uid=36556
+---
+description::
+Teddy's cat has run away! Can you help find him? 
+///////////////////////////////////////////// 
+
+A click-and-pick adventure game drawn, programmed, and animated entirely in Flash. It starts out friendly, but soon, Teddy finds himself in some odd circumstances... 
+
+Music generated at abundant-music.com. Special thanks to RVA Game Jams for hosting!

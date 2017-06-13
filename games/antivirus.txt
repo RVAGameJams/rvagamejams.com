@@ -1,0 +1,11 @@
+title::AntiVirus
+---
+author::Galan
+---
+event::ld24
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-24/?action=preview&uid=11241
+---
+description::Micro-evolution in action! Fight off the viral invasion, but look out, they evolve-- Thankfully though, so do you! Good luck, since in the arms race against the viral menace, WE MAY BE THE LOSERS... 
+
+Made in the Blender Game Engine on Ubuntu. The Windows build has not been tested.

@@ -1,0 +1,9 @@
+event::Ludum Dare 38
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2017-4-21
+---
+dateend::2017-4-24

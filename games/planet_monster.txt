@@ -1,0 +1,26 @@
+title::Planet Monster
+---
+author::01010111
+---
+event::ld27
+---
+playlink::http://x01010111.com/content/flash/planet_monster/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=11474
+---
+description::
+The Golden Delights and Infinite Perils of Planet Monster is a Tower Defense game where you make lots of money for some space corporation by harvesting gold from PLANET MONSTER! 
+
+Start a game by clicking with the mouse, you can switch between Walls, Turrets, Upgrading, and Selling with the numbers 1-4 on your keyboard, or by clicking them at the bottom of the screen. 
+
+Made with: 
+FlashDevelop 
+Flixel 
+Photoshop 
+MilkyTracker 
+
+YEAH! ENJOY! 
+
+*UPDATE* I fixed a bug that would give a Game Over after one hit, also made that Cash indicator faster :D 
+
+*UPDATE* Whoops - I never tested it in Firefox, should be working now :) Thanks GFM and Antonijn for bringing it to my attention!

@@ -1,0 +1,24 @@
+title::Destroy the Rebel Scum.
+---
+author::uncade
+---
+event::ld27
+---
+playlink::http://www.kongregate.com/games/Uncade/destroy-the-rebel-scumm
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-27/?action=preview&uid=3294
+---
+description::
+Destroy the Rebel Scum is a parody of the Hoth battle from Star Wars with QWOP -like mechanics, 
+
+Destroy the rebels within 10 seconds. Or don't. You know.. whatever. 
+
+Instructions: 
+
+Restart - Enter 
+Front Left Leg - E D R F 
+Front Right Leg - Y H U J 
+Back Left Leg - Q A W S 
+Back Right Leg - I K O L 
+Head - T G 
+Fire Missile - Space 

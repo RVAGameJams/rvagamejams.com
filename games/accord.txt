@@ -1,0 +1,22 @@
+title::accord
+---
+author::omaha
+---
+event::ld26
+---
+playlink::http://whilesoftware.com/wp-content/static/accord/accord.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-26/?action=preview&uid=5229
+---
+description::
+A musical platformer. 
+
+- Stay off the ground while the song is playing 
+- A/D or arrow keys to move left/right. 
+- Press and *hold* 'Space' to jump and double jump 
+- Don't forget to double jump 
+- Try to finesse the jump keypresses (timing and longevity) 
+
+I only had enough time to make 2 short levels for this game, so I took a shortcut and made 'hard' versions of each to represent levels 3 and 4. 
+
+Thanks for playing!
