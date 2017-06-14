@@ -1,6 +1,6 @@
  <?php
 	
-	$event_links="";
+	$event_links="<div class='eventlinks'><ul>";
 	$event_id=$_GET['title'];
 	$event_img='game_images/holder.gif';
 	
@@ -47,15 +47,15 @@
 			}
 			elseif(strpos($items[$i],"directions")!==false)
 			{
-				$event_links.="<a href=".rtrim($items[$i+1]).">directions</a><br/>";
+				$event_links.="<li><a href=".rtrim($items[$i+1])."><i class='material-icons'>place</i>directions</a></li>";
 			}
 			elseif(strpos($items[$i],"infolink")!==false)
 			{
-				$event_links.="<a href=".rtrim($items[$i+1]).">more info</a><br/>";
+				$event_links.="<li><a href=".rtrim($items[$i+1])."><i class='material-icons'>info</i>more info</a></li>";
 			}
 			elseif(strpos($items[$i],"rsvplink")!==false)
 			{
-				$event_links.="<a href=".rtrim($items[$i+1]).">rsvp</a><br/>";
+				$event_links.="<li><a href=".rtrim($items[$i+1])."><i class='material-icons'>mail</i>rsvp</a></li>";
 			}
 			elseif(strpos($items[$i],"opentime")!==false)
 			{
@@ -105,6 +105,7 @@
 	}
 	else
 	{
+		$event_links.="</ul></div>";
 		$event_body="
 			<div class='card'>
 				<div class='card_img'>
@@ -115,8 +116,9 @@
 					<h2>".$event_dates." at ".$event_venue."</h2>
 					<h2>".$event_stime."</h2>
 					<p>".$event_descr."</p>
-					<p>".$event_links."</p>
+					
 				</div>
+				".$event_links."
 			</div>
 		";
 	}
@@ -186,6 +188,9 @@
 
 <head>
   <link rel="stylesheet" href="include/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
 </head>
 
 <body>

@@ -4,6 +4,12 @@ venue::804RVA
 ---
 vlink::http://www.804rva.com/
 ---
+directions::ok
+---
+infolink::ok
+---
+rsvplink::ok
+---
 datestart::2020-12-11
 ---
 dateend::2020-12-14

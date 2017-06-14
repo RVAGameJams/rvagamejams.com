@@ -95,18 +95,12 @@
 			</div>
 			</div>
 			
-			<div class='card'>
-				<div class='thumbnails'>
-					<div class='link_resources'>
-						<p>Resources</p>
-					</div>
-					<div class='link_about'>
-						<p>About</p>
-					</div>
-					<div class='link_donate'>
-						<p>Donate</p>
-					</div>
-				</div>
+			<div class='features'>
+				<ul>
+					<li><a href='resources.php'>Resources</a></li>
+					<li><a href='about.php'>About</a></li>
+					<li><a href='donate.php'>Donate</a></li>
+				</ul>
 			</div>
 			
 			<div class='card'>
@@ -220,12 +214,6 @@
 			<div class='bspacer20'>.</div>
 			<div class='more_info'>
 				<p><a href='games.php'>> View all games</a></p>
-			</div>
-		</div>
-		<div class='card'>
-			<div class='card_info'>
-				<h1>Our Mission</h1>
-				<p>".file_get_contents('include/mission.txt')."</p>
 			</div>
 		</div>
 	";
