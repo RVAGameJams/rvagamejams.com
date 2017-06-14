@@ -1,6 +1,6 @@
  <?php
 	
-	$game_links="";
+	$game_links="<div class='infolinks'><ul>";
 	$game_id=$_GET['title'];
 	$game_img='game_images/holder.gif';
 	
@@ -39,11 +39,13 @@
 			}
 			elseif(strpos($items[$i],"playlink")!==false)
 			{
-				$game_links.="<a href=".rtrim($items[$i+1]).">play</a><br/>";
+				$game_links.="<li><a href=".rtrim($items[$i+1]).">
+					<i class='material-icons'>videogame_asset</i>play</a></li>";
 			}
 			elseif(strpos($items[$i],"jamlink")!==false)
 			{
-				$game_links.="<a href=".rtrim($items[$i+1]).">jam page</a><br/>";
+				$game_links.="<li><a href=".rtrim($items[$i+1]).">
+					<i class='material-icons'>link</i>jam page</a></li>";
 			}
 			elseif(strpos($items[$i],"event")!==false)
 			{
@@ -77,6 +79,7 @@
 		return "UH OH! Node ".$e_node_string." is missing!";
 	}
 	
+	$game_links.="</ul></div>";
 	$game_body="
 		<div class='card'>
 			<div class='card_img'>
@@ -86,15 +89,17 @@
 				<h1>".$game_title."&nbsp;-&nbsp;".$game_author."</h1>
 				<h2>".$game_event."</h2>
 				<p>".$game_descr."</p>
-				<p>".$game_links."</p>
+				
 			</div>
+			".$game_links."
 		</div>
 	";
 	
 ?>
 
 <head>
-  <link rel="stylesheet" href="include/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="include/style.css">
 </head>
 
 <body>

@@ -1,6 +1,6 @@
  <?php
 	
-	$event_links="<div class='eventlinks'><ul>";
+	$event_links="<div class='infolinks'><ul>";
 	$event_id=$_GET['title'];
 	$event_img='game_images/holder.gif';
 	
@@ -47,15 +47,18 @@
 			}
 			elseif(strpos($items[$i],"directions")!==false)
 			{
-				$event_links.="<li><a href=".rtrim($items[$i+1])."><i class='material-icons'>place</i>directions</a></li>";
+				$event_links.="<li><a href=".rtrim($items[$i+1]).">
+					<i class='material-icons'>place</i>directions</a></li>";
 			}
 			elseif(strpos($items[$i],"infolink")!==false)
 			{
-				$event_links.="<li><a href=".rtrim($items[$i+1])."><i class='material-icons'>info</i>more info</a></li>";
+				$event_links.="<li><a href=".rtrim($items[$i+1]).">
+					<i class='material-icons'>info</i>more info</a></li>";
 			}
 			elseif(strpos($items[$i],"rsvplink")!==false)
 			{
-				$event_links.="<li><a href=".rtrim($items[$i+1])."><i class='material-icons'>mail</i>rsvp</a></li>";
+				$event_links.="<li><a href=".rtrim($items[$i+1]).">
+					<i class='material-icons'>mail</i>rsvp</a></li>";
 			}
 			elseif(strpos($items[$i],"opentime")!==false)
 			{
@@ -187,10 +190,8 @@
 ?>
 
 <head>
-  <link rel="stylesheet" href="include/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="include/style.css">
 </head>
 
 <body>
