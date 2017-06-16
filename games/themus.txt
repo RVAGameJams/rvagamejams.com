@@ -1,0 +1,12 @@
+title::Themus
+---
+author::JamesOfJames
+---
+event::ld30
+---
+playlink::http://www.philome.la/FeralIronclad/themeus/play
+---
+jamlink::ludumdare.com/compo/ludum-dare-30/?action=preview&uid=29079
+---
+description::This is pretty unfinished. Mostly I just wanted to show what I got done and not feel like a failure.
+

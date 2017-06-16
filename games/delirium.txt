@@ -1,0 +1,22 @@
+title::Delirium
+---
+author::ruthiepee
+---
+event::ld30
+---
+playlink::http://ruthieswebsite.com/delirium/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=36556
+---
+description::After the young protagonist falls ill, she becomes extremely tired and susceptible to delusions. 
+Help her navigate between real life and the dream world in order to find inner peace. 
+/////////// 
+
+A click-and-pick adventure game drawn, programmed, and animated entirely in Flash. 
+
+CONTROLS: Mouse only. Move left/right, click to jump, and click on objects. 
+HINT: Click the bed to travel between worlds. 
+
+DISCLAIMER: Sorry the collision detection is garbage-- I'm learning! Also, sometimes objects are hard to click because they are behind the player. Try moving the player out of the way. 
+
+Special thanks to RVA Game Jams for hosting.

@@ -1,0 +1,18 @@
+title::BlueBlaze
+---
+author::JamesOfJames
+---
+event::ld32
+---
+playlink::https://jamesofjames.itch.io/untitled
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=29079
+---
+description::Up / W - Accelerate 
+Down / S - Decelerate 
+Left / Right, A / D - Turn 
+Space, Tab, Shift, Mouse Buttons - Begin / End Chain 
+
+Follow the flashing indicator to pilot the Blue Blaze to victory! Clear 25 gates before all challengers to win! Block your opponents' path by laying chains, but watch out for theirs! 
+
+Not my favorite theme, and I didn't really put a great deal into this game after a false start in another direction. I think this is a simple enough idea that I might play with it some more, though I'm not sure if that would just be turd-polishing.

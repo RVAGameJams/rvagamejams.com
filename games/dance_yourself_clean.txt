@@ -1,0 +1,9 @@
+title::dance yourself clean
+---
+author::omaha
+---
+event::ggj15
+---
+jamlink::http://globalgamejam.org/2015/games/dance-yourself-clean
+---
+description::The spotlight is on you. It's time to dance. Show us your best moves and the crowd will try their best to keep up :)

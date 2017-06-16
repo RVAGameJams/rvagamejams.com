@@ -1,0 +1,21 @@
+title::Redshift Blueshift
+---
+author::01010111
+---
+event::ld30
+---
+playlink::http://x01010111.com/play/redshift_blueshift/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=11474
+---
+description::TWO SHIPS BATTLE AN ENDLESS WAR IN SPACE AND TIME 
+
+OSTSRB is a vicious hyper-violent tournament-style pong-like 
+
+Play with two players, single players, keyboard, or 360 Controllers! 
+
+RECOMMENDED - TWO PLAYER VS MODE WITH TWO 360 CONTROLLERS 
+
+Tools used - HaxeFlixel, FlashDevelop, Photoshop, FL Studio, Chipsounds, Genny by superjoebob 
+
+Thx to David, Andrew, Momin and others who helped me tune this up, LaughingLeader and the HaxeFlixel community who pulled through at the last minute for some troubleshooting help :)

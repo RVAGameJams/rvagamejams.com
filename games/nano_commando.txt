@@ -1,0 +1,9 @@
+title::Nano Commando
+---
+author::Andrew Bowers & Charles Disse & Jon Sowers & Ryan Martell & Samuel Austin Mark & Ben Bryant & tokija & jonteap
+---
+event::ggj13
+---
+jamlink::http://2013.globalgamejam.org/2013/nano-commando
+---
+description::Command a nanotech ship defending the heart from encroaching disease.

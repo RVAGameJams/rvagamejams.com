@@ -1,0 +1,15 @@
+title::Collector
+---
+author::Galan
+---
+event::ld31
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=11241
+---
+description::Use the monster to destroy the invading tower. 
+
+Move with the arrow keys. Pick up items with Z, and put them back down with X. Figure out what everything does. 
+
+It's basically a tech demo. 
+
+Edit: Updated binaries w/ minor bug fixes. Linux is tested and should work. Mac and Windows testing would be appreciated.

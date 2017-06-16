@@ -1,0 +1,20 @@
+title::Rock Paper Scissors ATTACK!
+---
+author::ruthiepee
+---
+event::ld32
+---
+playlink::http://ruthieswebsite.com/rockpaperscissorsattack/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=36556
+---
+description::Rock, paper, scissors... RUN FOR YOUR LIFE! 
+////////////////////////////////////////////////// 
+
+Use the mouse to aim and shoot, and use Q-W-E to switch between rock, paper, and scissors. Use the appropriate weapon to destroy the enemy, and don't let them reach the warehouse! 
+
+Code: HaxeFlixel 
+Artwork: Pixen & Photoshop 
+Music: Milkytracker 
+
+Special thanks to RVA Game Jams for hosting!

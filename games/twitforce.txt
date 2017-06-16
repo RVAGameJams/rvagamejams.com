@@ -1,0 +1,9 @@
+title::TwitForce
+---
+author::GLStephen
+---
+event::ld30
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=41563
+---
+description::TwitForce integrates with Twitter to change game dynamics. TwitForce is a SHMUP with a twist. Tweets which contain #TFPilot and tweets that contain #TFEnemy will provide boosts to the pilot fire rate and enemy spawn rates respectively. This is a multiplayer SHMUP of a totally different sort and Connects the Worlds of Twitter and Gaming!

@@ -1,0 +1,9 @@
+title::all my friends live here
+---
+author::Jacob Kreiner & Olivia LeClair & quark.wei & sir corgi victory
+---
+event::ggj15
+---
+jamlink::http://globalgamejam.org/2015/games/all-my-friends-live-here
+---
+description::listen

@@ -18,7 +18,7 @@
 			$txt_file=file_get_contents("games/".$game);
 			$g=new Game;
 			$g->id=str_replace(".txt","",$game);
-			$g->img="games/images/404.png";
+			$g->img="include/images/404.png";
 			if (file_exists('games/images/'.$g->id.'.png'))
 				$g->img='games/images/'.$g->id.'.png';
 			if (file_exists('games/images/'.$g->id.'.gif'))
@@ -122,7 +122,7 @@
 ?>
 
 <head>
-  <link rel="stylesheet" href="include/style.css">
+  <?php include 'include/head.php';?>
 </head>
 
 <body>

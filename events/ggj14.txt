@@ -1,0 +1,7 @@
+event::Global Game Jam 2014
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2014-01-24

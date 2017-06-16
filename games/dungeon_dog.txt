@@ -1,0 +1,25 @@
+title::Dungeon Dog
+---
+author::uncade
+---
+event::ld34
+---
+playlink::https://uncade.itch.io/dungeon-dog
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=3294
+---
+description::You are dog. 
+
+Dog must grow. 
+
+Grow dog grow. 
+
+More dog is better dog. 
+
+Controls: 
+Arrow keys to move 
+Space to vomit 
+X or C to poop 
+
+Code and Art by Uncade 
+Music by x01010111

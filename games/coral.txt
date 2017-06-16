@@ -1,0 +1,19 @@
+title::Coral
+---
+author::Vavassor
+---
+event::ld30
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=17930
+---
+description::A game about finding a way 
+
+Heed my warning: to anyone who gets motion-sickness from games or who has other visual sensitivity, I STRONGLY discourage you from playing! The game is intentionally visually disorienting! 
+
+The Non-Smearing build is advised as an alternative if you have any problems with the buffer non-clearing effect. 
+
+MAC-OS and LINUX UPDATE: ugh, when running under opengl in certain configurations, the background flickers wildly. This appears to be caused by double-buffering settings that unity has left out of my control. I am very sorry. 
+
+// Known Issues 
+-strobing on some opengl-dependent builds 
+-mouse-relative movement hits edge of screen on mac-osx

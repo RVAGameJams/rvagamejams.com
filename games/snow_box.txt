@@ -1,0 +1,21 @@
+title::Snow Box
+---
+author::omaha
+---
+event::ld31
+---
+playlink::https://whiledata.com/static/snowbox.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=5229
+---
+description::Welcome to my Snow Box! 
+
+This is a twin-stick shooter. There's keyboard and gamepad support, so feel free to use whatever hardware you prefer. 
+
+-- Keyboard -- 
+WASD to move, arrows to shoot 
+
+-- Gamepad -- 
+Left and Right thumbsticks 
+
+Many thanks to Robert del Naja for the track 'HS' included here.

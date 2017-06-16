@@ -64,6 +64,7 @@
 	if (count($upcoming)>0)
 	{
 		$index_body.="
+		<div class='card'>
 			<div class='card_info'>
 				<h1>Next Event:</h1>
 			</div>
@@ -93,25 +94,68 @@
 			<div class='more_info'>
 				<p><a href='events.php'>> View all events</a></p>
 			</div>
-			</div>
-			
-			<div class='features'>
-				<ul>
-					<li><a href='resources.php'>Resources</a></li>
-					<li><a href='about.php'>About</a></li>
-					<li><a href='donate.php'>Donate</a></li>
-				</ul>
-			</div>
-			
-			<div class='card'>
+		</div>
 		";
 	}
 	
+	else
+	{
+		if (rand(0,1) < 1)
+		{
+			$index_body.="
+			<div class='card'>
+				<div class='card_info'>
+						<h1>Join us on Facebook:</h1>
+				</div>
+				<a href='https://www.facebook.com/groups/rvagamejams/'>
+						<div class='upcoming_event'>
+							<p>Stay up to date with our events!</p>
+							<img src='/include/images/fb.png'>
+						</div>
+					</a>
+					<div class='bspacer20'>.</div>
+				<div class='more_info'>
+					<p><a href='events.php'>> View previous events</a></p>
+				</div>
+			</div>
+			";
+		}
+		else
+		{
+			$index_body.="
+			<div class='card'>
+				<div class='card_info'>
+						<h1>Support us on Patreon:</h1>
+				</div>
+				<a href='https://www.patreon.com/rvagamejams'>
+						<div class='upcoming_event'>
+							<p>Help our Community grow!</p>
+							<img src='/include/images/patreon.png'>
+						</div>
+					</a>
+					<div class='bspacer20'>.</div>
+				<div class='more_info'>
+					<p><a href='events.php'>> View previous events</a></p>
+				</div>
+			</div>
+			";
+		}
+	}
+	
 	$index_body.="
-		<div class='card_info'>
-			<h1>Most Recent Games</h1>
+		<div class='features'>
+			<ul>
+				<li><a href='resources.php'>Resources</a></li>
+				<li><a href='about.php'>About</a></li>
+				<li><a href='donate.php'>Donate</a></li>
+			</ul>
 		</div>
-		<div class='thumbnails'>
+		
+		<div class='card'>
+			<div class='card_info'>
+				<h1>Most Recent Games</h1>
+			</div>
+			<div class='thumbnails'>
 	";
 	
 	$games_list=[];
@@ -124,7 +168,7 @@
 			$txt_file=file_get_contents("games/".$game);
 			$g=new Game;
 			$g->id=str_replace(".txt","",$game);
-			$g->img="games/images/404.png";
+			$g->img="include/images/404.pngs";
 			if (file_exists('games/images/'.$g->id.'.png'))
 				$g->img='games/images/'.$g->id.'.png';
 			if (file_exists('games/images/'.$g->id.'.gif'))
@@ -206,9 +250,7 @@
 		";
 	}*/
 		
-	$index_body="
-		<div class='card'>
-			".$index_body."
+	$index_body.="
 			</div>
 			</div>
 			<div class='bspacer20'>.</div>
@@ -239,11 +281,12 @@
 ?>
 
 <head>
-  <link rel="stylesheet" href="include/style.css">
+    <?php include 'include/head.php';?>
 </head>
 
 <body>
 	<?php include 'include/header.php';?>
 	<?php echo $index_body;?>
+	<?php include 'include/connect.php';?>
 	<?php include 'include/footer.php';?>
 </body>

@@ -1,0 +1,9 @@
+title::Daydream
+---
+author::Galan & Mark McLaughlin & CLRaggo & Arrowsmith & Liam2
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/daydream-working-title
+---
+description::A glimpse inside an interesting mind.

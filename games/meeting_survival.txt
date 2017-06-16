@@ -1,0 +1,11 @@
+title::Meeting Survival
+---
+author::sdeng
+---
+event::ld31
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=45757
+---
+description::You're stuck in a meeting, and that sucks! 
+
+Try to get out of it!

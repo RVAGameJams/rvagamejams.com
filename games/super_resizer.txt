@@ -1,0 +1,15 @@
+title::Super Resizer
+---
+author::foolmoron
+---
+event::ld31
+---
+playlink::https://foolmoron.itch.io/super-resizer
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=36186
+---
+description::Play the game by resizing your browser! 
+
+PLEASE ALLOW POPUPS! The game only runs in the popup!! 
+
+Works only on desktop browsers, Chrome preferably (Firefox works too).

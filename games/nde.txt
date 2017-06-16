@@ -1,0 +1,9 @@
+title::NDE
+---
+author::Galan Montgomery & Lily Wong & Monica Ford & Rhys Graves & Nelson Alonso Benavides & daredyoshi
+---
+event::ggj13
+---
+jamlink::http://2013.globalgamejam.org/2013/nde
+---
+description::You have a heart condition. You are not doing so well.

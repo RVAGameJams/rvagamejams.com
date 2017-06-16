@@ -1,0 +1,16 @@
+title::Avalanche
+---
+author::uvwar
+---
+event::ld31
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=40468
+---
+description::Try to fullscreen your player if at all possible, and be sure to crank up your sound for maximum enjoyment. 
+
+Can you climb the precarious peaks to reach your goatly kin? 
+
+W,A,S,D or Arrow keys to control, Spacebar to jump. 
+
+In case you can't get enough of the music 
+https://soundcloud.com/vrolik/goatmusic

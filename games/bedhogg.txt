@@ -1,0 +1,26 @@
+title::ＢＥＤ✰ＨＯＧＧ
+---
+author::01010111
+---
+event::ld32
+---
+playlink::https://01010111.itch.io/bedhogg
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=11474
+---
+description::​[ ＣＯＮＴＲＯＬＳ － ３６０ ＣＯＮＴＲＯＬＬＥＲ ] 
+RIGHT STICK & D-PAD.......MOVEMENT / 
+A..........JUMP / B........CHARGE ATTACK / 
+X........REGULAR ATTACK / Y......THROW 
+
+[ ＣＯＮＴＲＯＬＳ － ＱＷＥＲＴＹ ] 
+
+ARROW KEYS......MOVEMENT 
+SPACE.....JUMP / W......CHARGE ATTACK /​ 
+D........REGULAR ATTACK / A......THROW​ 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+made with Haxeflixel / Haxe / OpenFL / Photoshop / 
+FLStudio / Plogue Chipsounds / Bedroom Producers 
+C64 Drum samples / FlashDevelop / <3

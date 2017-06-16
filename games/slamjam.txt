@@ -1,0 +1,11 @@
+title::SlamJam!!!!
+---
+author::BHOSMILLO01
+---
+event::ld31
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=42117
+---
+description::This is another version of "Breakout", except the paddle can now hit the ball by swinging it like a tennis racket, which can cause the ball to move fast. The faster the ball, the more powerful it gets. 
+
+Note: The game has a bug where the ball vanishes, so I programmed it so when the ball vanishes, another ball spans with no effect on lives.

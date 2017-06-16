@@ -1,0 +1,9 @@
+title::Shark Island
+---
+author::Mark Zvijac & Oniotaku & sharpircx
+---
+event::ggj15
+---
+jamlink::http://globalgamejam.org/2015/games/shark-island
+---
+description::Save the passengers of a downed plane by ferrying them to safety on the island. ...But watch out for sharks. I hear they can get a bit aggressive.

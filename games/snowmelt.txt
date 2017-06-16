@@ -1,0 +1,22 @@
+title::SnowMelt
+---
+author::JamesOfJames
+---
+event::ld31
+---
+playlink::https://jamesofjames.itch.io/snowmelt
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=29079
+---
+description::You play as a snowman, beset on all sides by vicious, destructive kids! Your only weapon - snowballs. But be careful - the more snowballs you make, the faster you melt! Luckily for you, someone's sliding blocks of ice through the streets; hopefully those can re-freeze you! 
+
+Left Click - throw snowball 
+Right Click - make snowball 
+Pause / Space - pause 
+
+The game ends if the bar at right hits the bottom 
+Keep those destructive kids from smashing you to bits! 
+Pelt ice blocks with snowballs to re-freeze yourself 
+
+http://twitter.com/FeralIronclad 
+http://sites.google.com/site/feralironclad/

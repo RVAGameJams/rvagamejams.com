@@ -1,0 +1,9 @@
+title::Fishion: Improbable
+---
+author::grillaface & adderob & Bearplane & Oniontaku & silbermanhl
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/fishion-improbable
+---
+description::It's kinda like Home Alone; but you're a fish... in and outta water. The burgular (shark man) must be stopped!

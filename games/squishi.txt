@@ -1,0 +1,12 @@
+title::Squishi
+---
+author::uncade
+---
+event::ld31
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=3294
+---
+description::I wanted to make a platformer that felt squishy. And had robot arms. Lots of robot arms. 
+
+wasd or arrow keys to move 
+space to jump, float, and stick to ceilings

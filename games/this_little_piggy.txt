@@ -1,0 +1,23 @@
+title::This Little Piggy
+---
+author::ruthiepee
+---
+event::ld34
+---
+playlink::http://ruthieswebsite.com/thislittlepiggy/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=36556
+---
+description::This little piggy finds herself in the midst of a busy commercial kitchen. Luckily for piggy, the chefs are dropping scraps everywhere! Avoid the chefs, grab as much grub as you can, and turn into a not-so-little piggy. 
+
+###################################### 
+
+CONTROLS: WASD or Arrow Keys 
+
+TOOLS USED: Haxeflixel, Sublime Text 2, Aseprite, Photoshop, Milkytracker 
+
+
+###################################### 
+
+Special thanks to RVA Game Jams for hosting! 
+(Change log: 12/13 - fixed a bug causing Flash to freeze because a number was dividing by 0, lol)

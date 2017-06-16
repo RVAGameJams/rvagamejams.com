@@ -1,0 +1,17 @@
+title::Isra & Miraj: "A Night Journey"
+---
+author::grillaface
+---
+event::ld30
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=19137
+---
+description::Isra & Miraj: "A Night Journey" 
+
+Buraq and Muhammad jot about the pathway between worlds in search of the farthest temple. 
+
+Music and SFX w acoustic guitar and signing bowl. 
+
+Maybe he'll get there someday.. 
+
+#plusPlus 

@@ -1,0 +1,16 @@
+title::Fish Fencing
+---
+author::Schwiggy
+---
+event::ld32
+---
+playlink::http://gamejolt.com/games/fish-fencing/61411
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=3954
+---
+description::Fish fencing is an honorable sport well established in the following countries: . Indeed, there are those who wish it were played at the Olympic Games. 
+
+You must defeat your opponent by accumulating points from either slapping their head or body with a fish. Regulation games go up to 10 points, though certain provinces play sudden death or higher point ranges. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WASD controls your body and the arrowkeys control your arm. You can also use the dual joysticks on game controllers – and if you hook up a second controller you can play against a friend in practice mode. (Gamepads don't always work in browsers, this one has been tested in Firefox) 

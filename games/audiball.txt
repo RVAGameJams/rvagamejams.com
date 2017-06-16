@@ -1,0 +1,9 @@
+title::Audiball
+---
+author::David Byers & Anne Lantz & Ayyaz Amjad & Shaun Donachy & Ben Hewer
+---
+event::ggj13
+---
+jamlink::http://2013.globalgamejam.org/2013/audiball
+---
+description::With the power of you voice, manipulate your environment in order to solve puzzles and play with balls. One person controls the player as he or she explores an open world. By using the microphone, their friend controls the environment. Together, the two players solve puzzles and interact with the world.

@@ -1,0 +1,25 @@
+title::Your Very Own Vampire Garden
+---
+author::tc4mpbell
+---
+event::ld34
+---
+playlink::https://manythingsblue.itch.io/your-very-own-vampire-garden
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=55940
+---
+description::Your goal: Create the MOST POPULAR vampire-owned garden ever! 
+
+Click to plant! ($1) 
+Hire vampires for your garden! ($10/day, +1 fear) 
+Avoid a reputation for being a place of murder! (Priceless) 
+
+Visitors pay $5 per plant viewed. MORE will visit the more popular your garden is. 
+
+Popularity is based on a COMPLEX FORMULA based on number of healthy plants and amount of fear surrounding your garden. 
+
+Fear is increased by recruiting a vampire gardener. Since in this case "recruiting" means biting and murdering someone and condemning them to an eternity as a low-paid vegetarian vampire gardener. Rumors will spread. 
+
+
+Notes: 
+- bugfix update that keeps the plants from always dying, despite the best efforts of the gard'ners.

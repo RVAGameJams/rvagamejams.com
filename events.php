@@ -132,7 +132,7 @@
 ?>
 
 <head>
-  <link rel="stylesheet" href="include/style.css">
+  <?php include 'include/head.php';?>
 </head>
 
 <body>

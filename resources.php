@@ -1,13 +1,9 @@
 <head>
-  <link rel="stylesheet" href="include/style.css">
+  <?php include 'include/head.php';?>
 </head>
 
 <body>
 	<?php include 'include/header.php';?>
-	
-	<div class='card'>
-		<h1>Hi</h1>
-	</div>
-	
+	<?php include 'include/how_to_start.php';?>
 	<?php include 'include/footer.php';?>
 </body>

@@ -1,0 +1,26 @@
+title::Sumo Twomo
+---
+author::foolmoron
+---
+event::ld34
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=36186
+---
+description::You play as a Twomo - an alien creature who is known to engage in rolling death matches from time to time. They can also grow in size by absorbing life energy from the universe. Eventually they will absorb all life, and the concept of existence as we know it will become meaningless. 
+
+This game was the result of me struggling with Unreal 4 for the entire weekend! It's honestly a miracle I got something playable out... 
+
+Windows-only sorry :( 
+
+​CONTROLS 
+​Twomo 1 
+A - turn left 
+S - turn right 
+A + S - boost forwards in the direction you're pointing 
+hold A + S - slowly grow in mass 
+
+​Twomo 2 
+K - turn left 
+L - turn right 
+K + L - boost forwards in the direction you're pointing 
+hold K + L - slowly grow in mass

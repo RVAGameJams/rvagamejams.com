@@ -1,0 +1,9 @@
+title::Menagerie
+---
+author::ruthiepee & uncade & Dermont & Shariq Torres & sykobillythekid & uvwar
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/menagerie
+---
+description::Move between the perspectives of different animals in the zoo in order to escape captivity in this puzzle/sandbox game.

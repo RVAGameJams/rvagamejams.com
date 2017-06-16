@@ -1,0 +1,12 @@
+title::Departures
+---
+author::tiffylou
+---
+event::ld30
+---
+playlink::http://tiffanyfrance.com/departures.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=42125
+---
+description::Transportation through Dante's Levels of Hell
+

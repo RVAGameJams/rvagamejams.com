@@ -2,7 +2,7 @@
 	
 	$event_links="<div class='infolinks'><ul>";
 	$event_id=$_GET['title'];
-	$event_img='game_images/holder.gif';
+	$event_img='include/images/404.pngs';
 	
 	$event_title="title needed";
 	$event_venue="venue tba";
@@ -142,7 +142,7 @@
 				
 				$txt_file=file_get_contents("games/".$game);
 				
-				$game_img="games/images/404.png";
+				$game_img="include/images/404.png";
 				if (file_exists('games/images/'.$game_id.'.png'))
 					$game_img='games/images/'.$game_id.'.png';
 				if (file_exists('games/images/'.$game_id.'.gif'))
@@ -190,8 +190,7 @@
 ?>
 
 <head>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="include/style.css">
+  <?php include 'include/head.php';?>
 </head>
 
 <body>

@@ -1,0 +1,7 @@
+event::Global Game Jam 2017
+---
+venue::VCUArts Depot
+---
+vlink::http://depot.vcu.edu/
+---
+datestart::2017-01-20

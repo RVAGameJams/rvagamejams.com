@@ -1,0 +1,40 @@
+title::ＵＰＳＱＵＩＤ
+---
+author::01010111
+---
+event::ld34
+---
+playlink::https://01010111.itch.io/upsquid
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=11474
+---
+description::[ ＣＯＮＴＲＯＬＳ － ＱＷＥＲＴＹ ] 
+
+LEFT / RIGHT ARROW KEYS (DOWN)....AIM 
+LEFT / RIGHT ARROW KEYS (RELEASE)....THRUST 
+
+[ ＣＯＮＴＲＯＬＳ － ＧＡＭＥＰＡＤ ] 
+
+LEFT / RIGHT SHOULDER BUTTONS 
+
+[ ＥＸＰＬＡＮＡＴＩＯＮ ] 
+
+Snack on little creatures! Snacks replenish energy! 
+Thrusting depletes energy! Don't run out of energy! 
+Don't fall behind or you'll go back to sleep! 
+
+HOLD BOTH KEYS WHEN COMBO GAUGE 
+IS FULL FOR OVER-BOOST 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+This game is dedicated to @moppin_ 
+He made my favorite game of 2015 
+<3 pls don't sue <3 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+[ ＳＴＵＦＦ ＵＳＥＤ ] 
+Code - HaxeFlixel, FlashDevelop, Git 
+Art - Aseprite (Sprites), OGMO (Level) 
+Audio - FLStudio, Chipsounds

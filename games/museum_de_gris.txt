@@ -1,0 +1,9 @@
+title::Museum de Gris
+---
+author::Galan & Nicolehamilton & ruthiepee & uvwar
+---
+event::ggj15
+---
+jamlink::http://globalgamejam.org/2015/games/museum-de-gris
+---
+description::Grab the goods and get out! Museum de Gris is home to an eclectic collection of valuable art and artifacts. You play as Robbert, a cunning thief with a taste for expensive things. Break into the museum and steal something priceless, but hurry! Find the escape ladder and flee with your newly-aquired trophy before you get caught. (Controls: Arrow keys to move)

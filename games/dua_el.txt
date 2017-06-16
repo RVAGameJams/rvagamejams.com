@@ -1,0 +1,23 @@
+title::Dua/el
+---
+author::Galan
+---
+event::ld30
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=11241
+---
+description::A two-player-only Competitive/Cooperative arena shooter. Challenge a friend! Get the high score! Screw your opponent! But remember, if the enemy overruns your opponent's world, they will escape into yours. 
+
+
+Controls: 
+
+Player One - Keyboard, twin-stick style. WASD, IJKL 
+
+Player Two - Mouse, turret-syle. Move to aim reticule; Left click to shoot; Right click to swap with player 1 and steal their powerups 
+
+
+
+
+
+Note 1: After some game-breaking bugs with the Windows build, I've had to re-upload a new build. Sadly, this contains a few balance changes that I'd implemented and couldn't easily revert. The OS X version is still untested. 
+Note 2: Builds have been updated to fix 3 last-minute bugs. (1) Title screen wasn't appearing. (2) Materials were missing on several objects. (3) Restarting the game on game over was causing crashes.

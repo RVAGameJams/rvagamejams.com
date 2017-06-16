@@ -1,0 +1,9 @@
+title::Eye of Odin
+---
+author::Daniel Wood & brimmerdn & bryantbw & freelantz & soyjoykim
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/eye-odin
+---
+description::The Eye of Odin is all knowing. Its light is all seeing, but can be deceiving. With the light it shows, convert symbols to your own likeness.

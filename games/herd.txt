@@ -1,0 +1,9 @@
+title::HERD
+---
+author::woodenrabbit & chaunceyhoyt & L Maunder & Quasar & queedilla & thomarlowe & Travis
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/herd
+---
+description::You and two of your species have arrived on an island, explore the valleys, coastlines, mountains and ruins in search of other potential tribesmen in order to cultivate a following. Choose between bloodshed and passiveness to see the effects herd mentality has as a result of following by example. Controls, WASD for directional movement Choose between “join us” and “kill” by clicking on the prompts

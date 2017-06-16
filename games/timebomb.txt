@@ -1,0 +1,21 @@
+title::Timebomb
+---
+author::Galan
+---
+event::ld34
+---
+playlink::https://isoteric-games.itch.io/timebomb
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=11241
+---
+description::You are a bomb. A minimalist bomb. Avoid obstacles by squeezing between them, but don't squeeze too hard: you need to skim the walls to increase your time. Hit something or run out of time, and it's game over. 
+
+It's Super Hexagon meets an endless runner! 
+
+Controls: 
+W/↑ — Expand 
+S/↓ — Contract 
+
+
+
+If anyone is interested. I have put up an HTML5 version on itch.io. It's buggy, so I don't want to use it for the compo, but if you want more, you can play Timebomb on the go (with Chrome). http://elanti.itch.io/timebomb

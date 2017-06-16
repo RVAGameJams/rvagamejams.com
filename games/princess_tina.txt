@@ -1,0 +1,9 @@
+title::Princess Tina
+---
+author::foolmoron & misngikd & econley & Nicolehamilton & IsAnthraxBayad & John Powell & Seir33
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/princess-tina
+---
+description::An action platformer about a girl who is lost in her imagination, with the ability to magically make platforms appear and disappear by changing her dress.

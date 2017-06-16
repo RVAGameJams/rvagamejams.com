@@ -1,0 +1,7 @@
+event::Global Game Jam 2015
+---
+venue::804RVA
+---
+vlink::http://www.804rva.com/
+---
+datestart::2015-01-23

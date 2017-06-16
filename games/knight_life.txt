@@ -1,0 +1,9 @@
+title::Knight Life
+---
+author::Dylan Ilvento & Mason Brown
+---
+event::ggj15
+---
+jamlink::http://globalgamejam.org/2015/games/knight-life
+---
+description::What happens when the hero is finished for the day? When there are no enemies left to vanquish and everyone is safe?

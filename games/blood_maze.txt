@@ -1,0 +1,9 @@
+title::Blood Maze
+---
+author::David Brimmer & Nicole Kim & Nihlus2027 & nrhartman
+---
+event::ggj13
+---
+jamlink::http://2013.globalgamejam.org/2013/blood-maze
+---
+description::A shifting maze and a race time, the player must must collect enough EMP's to revive the heart at the center of the maze. The player is a red blood cell attempting to reach the heart but to do so they must acquire enough voltage in proper rhythm. If the heart rate slows down or speeds up too much the player loses and must start over. The player should be careful to avoid maze walls and cholesterol as they navigate through the puzzle.

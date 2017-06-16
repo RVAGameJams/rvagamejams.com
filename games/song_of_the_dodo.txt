@@ -1,0 +1,15 @@
+title::Song of the Dodo
+---
+author::uvwar
+---
+event::ld30
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=40468
+---
+description::The year is 1507 on the small island of Mauritius. 
+
+You play a flock of docile dodo birds as they go about their business as they've done for millennia. 
+
+But Portuguese sailors have recently arrived on the island, and have brought strange new animals with them. How long can you survive their onslaught? 
+
+W,A,S,D to control, with Space for jump.

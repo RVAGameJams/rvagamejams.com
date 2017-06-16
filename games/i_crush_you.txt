@@ -1,0 +1,25 @@
+title::I CRUSH YOU
+---
+author::grillaface
+---
+event::ld32
+---
+playlink::http://x01010111.com/play/I_CRUSH_YOU/I_CRUSH_YOU.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=19137
+---
+description::Many little heads. 
+
+I must crush them! 
+
+Controls: 
+
+Left / right or A/D, mouse for the hand and click to pinch. 
+
+Based of course on the classic "Kids in the Hall" skit. Would have loved to add more characters, levels, well everything... but fix bugs or add features? That is the question. 
+
+Made with love at the RVAGAMEJAMS.com LD meetup in Richmond VA, and with a little help from Photoshop, PyxelEdit, Audacity, an iPhone and electric guitar. 
+
+And HUGE thanks to the awesome Will Blanton (@x01010111), the host with the most, for both hosting the meetup and my game on his site. Check out his stuff it's the awesomest :) 
+
+Please have fun and thanks for playing :) 

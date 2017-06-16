@@ -1,0 +1,19 @@
+title::keyTD
+---
+author::foolmoron
+---
+event::ld32
+---
+playlink::http://foolmoron.io/keyTD/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-32/?action=preview&uid=36186
+---
+description::keyTD is a keyboard tower defense game 
+
+Tap the keys on your keyboard to damage enemies that are passing over the keys. 
+Upgrade your keys between waves to fight off the increasingly difficult enemies. 
+
+Supports QWERTY, AZERTY, Dvorak, and Colemak keyboard layouts!! 
+
+PLEASE USE FIREFOX OR IE! THE WEB PLAYER DOES NOT WORK IN CHROME! 
+Sorry for only having the Web Player version... I tried the WebGL export for a while and it kept crashing : /

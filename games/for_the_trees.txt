@@ -1,0 +1,30 @@
+title::for the trees
+---
+author::omaha
+---
+event::ld34
+---
+playlink::https://whiledata.com/static/ld34.swf
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=5229
+---
+description::=============================================================================== 
+
+
+A game about a forest. Nurture your seeds and help them grow up big and strong. 
+
+WASD/Arrows - to move 
+Space - to jump 
+Mouse - to aim 
+Left Mouse Button - to fire 
+
+
+=============================================================================== 
+
+
+I intended to make a game with big guns and explosions and lots of killing stuff, but something (someone) pulled me in a new direction. 
+
+#gamedevdad 
+
+
+===============================================================================

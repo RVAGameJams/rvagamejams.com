@@ -21,6 +21,7 @@ body {
 }
 
 .header ul {
+	float:left;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -32,19 +33,31 @@ body {
     float: left;
 }
 
+.header li a {
+    display: block;
+    text-align: center;
+	padding: 15px;
+    text-decoration: none;
+}
+
+.cta_link {
+	background-color: #eee;
+	font-size: large;
+}
+
+.cta_link a {
+    display: block;
+    text-align: center;
+	padding: 15px;
+    text-decoration: none;
+}
+
 .logo {
 	position: fixed;
 	right: 20px;
 	bottom: 54px;
 	z-index: -1000;
 	height:128px;
-}
-
-.header li a {
-    display: block;
-    text-align: center;
-	padding: 15px;
-    text-decoration: none;
 }
 
 .footer {
@@ -341,7 +354,6 @@ div.upcoming_date>h2 {
 
 .infolinks li {
     float: left;
-	font-size: normal;
 }
 
 .infolinks li a {
@@ -351,10 +363,47 @@ div.upcoming_date>h2 {
     text-decoration: none;
 }
 
+.connectlinks {
+	display: block;
+	margin: -20 0 0 0;
+}
+
+.connectlinks ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.connectlinks li {
+    float: left;
+	width:25%;
+}
+
+.connectlinks li a {
+    display: block;
+    text-decoration: none;
+}
+
 .material-icons {
 	font-size: 16px;
 	margin: 0 10px 0 0 !important;
 	vertical-align: sub !important;
+}
+
+.fa_container {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+.fa {
+	font-size: 15px;
+    padding: 15px;
+	width: 24px;
+    text-align: center;
+    text-decoration: none;
 }
 
 /*--LINKS--------------------*/

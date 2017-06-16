@@ -1,0 +1,19 @@
+title::interball
+---
+author::foolmoron
+---
+event::ld30
+---
+playlink::https://foolmoron.itch.io/interball
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=36186
+---
+description::Click (or touch) and drag to play. Collect white orbs to increase the timer and try to stay alive! 
+Zoom the browser out if the game doesn't fit! 
+
+Tools used: 
+Unity 4.6 beta 
+VS2012 for programming 
+Bfxr for sounds 
+Audacity for sound editing 
+GIMP 2.0 for image editing

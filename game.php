@@ -2,7 +2,7 @@
 	
 	$game_links="<div class='infolinks'><ul>";
 	$game_id=$_GET['title'];
-	$game_img='game_images/holder.gif';
+	$game_img='include/images/404.pngs';
 	
 	$game_title="title needed";
 	$game_author="author needed";
@@ -98,8 +98,8 @@
 ?>
 
 <head>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="include/style.css">
+	<title><?php echo $game_title;?></title>
+	<?php include 'include/head.php';?>
 </head>
 
 <body>

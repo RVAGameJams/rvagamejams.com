@@ -1,0 +1,22 @@
+title::Safe or Sorry
+---
+author::JimmothySanchez
+---
+event::ld34
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=62158
+---
+description::Safe or Sorry is a competitive survival horror game based on the prompt "Two Buttons". One button is "Safe" and the other will leave you "Sorry". 
+
+Game Rules: 
+-Pressing SORRY Spawns a monster and awards you points. 
+-The more monsters and the longer you stay alive the more points you get. 
+-Pressing SAFE ends the game and banks all of your points. 
+-Dying losses all of your points 
+-Try to get a high score! 
+
+Controls: 
+Mouse - Looks around 
+Left Click - Presses the buttons 
+Space - Jump, or respawn if you are dead 
+Escape - Quit the game 

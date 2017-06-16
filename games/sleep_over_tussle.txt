@@ -1,0 +1,35 @@
+title::Sleep Over Tussle
+---
+author::woodenrabbit
+---
+event::ld31
+---
+playlink::http://antonpantev.com/projects/sleep-over-tussle/sleep-over-tussle.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=33849
+---
+description::Instructions: 
+
+Move with WASD 
+Aim with Mouse 
+Left Click to Melee Attack 
+Right Click to use Secondary Ability (which you pick up) 
+
+The more you kill the higher your score. 
+
+Pick up the diamonds to gain a secondary ability. 
+Red - gives you arrows 
+Green - lets you dash through enemies to harm them (while taking reduced damage) 
+Orange - stuns all enemies near you 
+
+
+Description: 
+
+You are having an ultimate battle royal sleep over with all of your best buds! That means there will be a lot of tussling. Fight all your friends as long as you can! 
+
+(note friends, sleep over, and fighting should be left up to your imagination because I can't actually draw any of that) 
+
+Contact: 
+
+You can reach me on twitter @AntonPantev 
+https://twitter.com/AntonPantev

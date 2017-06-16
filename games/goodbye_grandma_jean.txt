@@ -1,0 +1,9 @@
+title::Goodbye Grandma Jean
+---
+author::omaha
+---
+event::ggj14
+---
+jamlink::http://globalgamejam.org/2014/games/goodbye-grandma-jean
+---
+description::This project is an interactive tribute to my late grandmother, Jean Ferebee Bishop. She devoted her life to her family. I'm proud to be a part of her legacy. In my 32 years, I never heard her utter a single negative word. In this simulation, I'm trying to recreate the experience of visiting her at her home in Bath, NC on the Pamlico sound.

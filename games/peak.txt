@@ -1,0 +1,15 @@
+title::Peak
+---
+author::ofwindandsea
+---
+event::ld30
+---
+playlink::https://dl.dropboxusercontent.com/u/45962726/Peak%20LD30%20FinalBuild/Peak%20LD30%20FinalBuild.html
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=40464
+---
+description::In Peak, you control a dimensional rift, or "peek," connecting two worlds. Your goal is to help Scout, a lone child explorer, ascend the side of a mountain by transporting him between the two worlds. 
+
+Created using: 
+Unity 4.5 
+Adobe Photoshop 

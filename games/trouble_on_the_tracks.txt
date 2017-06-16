@@ -1,0 +1,19 @@
+title::Trouble on the Tracks
+---
+author::ruthiepee
+---
+event::ld31
+---
+playlink::http://ruthieswebsite.com/TroubleAtTheStation/
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=36556
+---
+description::ROMANCE! ACTION! INTRIGUE! Will lost lovers reunite? 
+///////////////////////////////////////////////////////////////////////// 
+
+A theatrical platform game, programmed in HaxeFlixel. 
+
+Made in 48 hours for Ludum Dare #31, December 2014. 
+Theme music, "Easy Winner," written by Scott Joplin and performed by me. Tools used: HaxeFlixel, Sublime Text 2, Pixen, Adobe Photoshop, Tiled, Adobe Dreamweaver, and Transmit. 
+
+Special thanks to RVA Game Jams for hosting! 

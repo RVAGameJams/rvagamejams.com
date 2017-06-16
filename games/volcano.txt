@@ -1,0 +1,29 @@
+title::Volcano
+---
+author::uvwar
+---
+event::ld34
+---
+jamlink::http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=40468
+---
+description::Grow Volcanoes! 
+
+Scroll in and out with the mouse wheel, left click to pan the camera. 
+
+WASD or ARROW KEYS to move your little red cursor 
+
+PRESS F to SPAWN a VOLCANO 
+
+MASH SPACEBAR to GROW and ERUPT a VOLCANO 
+
+Be careful of spawning a bunch of volcanoes before you erupt them! This can bring the game to a standstill. Erupt as you place! 
+
+
+Special Thanks to: 
+Will Blanton 
+Momin Khan 
+David Byers 
+Kirk Musngi 
+Sebastian Lague 
+Mentalogicus 
+Jasper Flick
